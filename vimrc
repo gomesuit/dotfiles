@@ -94,7 +94,7 @@ set expandtab
 " 検索ワードの最初の文字を入力した時点で検索を開始する
 set incsearch
 " 保存されていないファイルがあるときでも別のファイルを開けるようにする
-"set hidden
+set hidden
 " 不可視文字を表示する
 set list
 " タブと行の続きを可視化する
