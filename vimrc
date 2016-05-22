@@ -195,6 +195,7 @@ syntax on
 colorscheme desert
 " 行番号の色
 highlight LineNr ctermfg=darkyellow
+set backspace=indent,eol,start
 """"""""""""""""""""""""""""""
 
 
