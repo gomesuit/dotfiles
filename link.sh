@@ -1,4 +1,6 @@
 #!/bin/sh
 
-ln -sf ~/dotfiles/vimrc ~/.vimrc
+cd "$(dirname "$0")" || exit
+
+ln -sf "$(pwd)"/vimrc ~/.vimrc
 
