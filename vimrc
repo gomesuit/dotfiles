@@ -8,26 +8,31 @@ set runtimepath^=~/.vim/bundle/neobundle.vim/
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-
-" golangコード補完
-NeoBundle 'fatih/vim-go'
-
+" ==== common ====
 " ファイルオープンを便利に
 NeoBundle 'Shougo/unite.vim'
 " 最近使ったファイルを表示
 NeoBundle 'Shougo/neomru.vim'
-
 " ディレクトリをツリー表示
 NeoBundle 'scrooloose/nerdtree'
-
 " gitを操作
 NeoBundle 'tpope/vim-fugitive'
-
 " コード補完
 NeoBundle 'Shougo/neocomplete.vim'
-
 " Vimの画面の一番下にあるステータスラインの表示内容が強化される
 NeoBundle 'itchyny/lightline.vim'
+
+" ==== ruby ====
+" 静的解析
+NeoBundle 'scrooloose/syntastic'
+" slimハイライト
+NeoBundle 'slim-template/vim-slim'
+" 自動で閉じる
+NeoBundle 'tpope/vim-endwise'
+
+" ==== golang ====
+" golangコード補完
+NeoBundle 'fatih/vim-go'
 
 
 """"""""""""""""""""""""""""""
@@ -110,6 +115,15 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
+
+
+" --------------------------------
+" rubocop
+" --------------------------------
+" syntastic_mode_mapをactiveにするとバッファ保存時にsyntasticが走る
+" active_filetypesに、保存時にsyntasticを走らせるファイルタイプを指定する
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+let g:syntastic_ruby_checkers = ['rubocop']
 
 
 """"""""""""""""""""""""""""""
