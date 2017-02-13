@@ -132,6 +132,10 @@ endif
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 
+" Vimの画面の一番下にあるステータスラインの表示内容が強化される
+NeoBundle 'itchyny/lightline.vim'
+
+
 """"""""""""""""""""""""""""""
 " 各種オプションの設定
 """"""""""""""""""""""""""""""
