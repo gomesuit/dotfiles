@@ -1,33 +1,37 @@
-" Note: Skip initialization for vim-tiny or vim-small.
-if 0 | endif
-
+" -------------------------------
+" NeoBundle
+" -------------------------------
 if &compatible
-  set nocompatible               " Be iMproved
+  set nocompatible
 endif
-
-" Required:
 set runtimepath^=~/.vim/bundle/neobundle.vim/
-
-" Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
+
+" golangコード補完
+NeoBundle 'fatih/vim-go'
 
 " ファイルオープンを便利に
 NeoBundle 'Shougo/unite.vim'
-" Unite.vimで最近使ったファイルを表示できるようにする
+" 最近使ったファイルを表示
 NeoBundle 'Shougo/neomru.vim'
 
-NeoBundle 'fatih/vim-go'
+" ディレクトリをツリー表示
+NeoBundle 'scrooloose/nerdtree'
+
+" gitを操作
+NeoBundle 'tpope/vim-fugitive'
+
+" コード補完
+NeoBundle 'Shougo/neocomplete.vim'
+
+" Vimの画面の一番下にあるステータスラインの表示内容が強化される
+NeoBundle 'itchyny/lightline.vim'
+
 
 """"""""""""""""""""""""""""""
-" Unit.vimの設定
+" unit neomru
 """"""""""""""""""""""""""""""
 " 入力モードで開始する
 let g:unite_enable_start_insert=1
@@ -49,17 +53,19 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
-NeoBundle 'scrooloose/nerdtree'
 
-NeoBundle 'tpope/vim-fugitive'
+" -------------------------------
+" vim-fugitive
+" -------------------------------
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
 " ステータス行に現在のgitブランチを表示する
 set statusline+=%{fugitive#statusline()}
 
 
-NeoBundle 'Shougo/neocomplete.vim'
-
+" -------------------------------
+" neocomplete コード補完
+" -------------------------------
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
@@ -132,9 +138,6 @@ endif
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 
-" Vimの画面の一番下にあるステータスラインの表示内容が強化される
-NeoBundle 'itchyny/lightline.vim'
-
 
 """"""""""""""""""""""""""""""
 " 各種オプションの設定
@@ -205,12 +208,8 @@ set backspace=indent,eol,start
 """"""""""""""""""""""""""""""
 
 
-call neobundle#end()
 
 " Required:
+call neobundle#end()
 filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
 NeoBundleCheck
-
