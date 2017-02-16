@@ -29,6 +29,9 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'slim-template/vim-slim'
 " 自動で閉じる
 NeoBundle 'tpope/vim-endwise'
+" メソッド定義元へのジャンプ(Ctrl+]で移動, Ctrl+tで戻る)
+" ctagsのインストールが別途必要
+NeoBundle 'szw/vim-tags'
 
 " ==== golang ====
 " golangコード補完
