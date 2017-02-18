@@ -70,6 +70,10 @@ autocmd QuickFixCmdPost *grep* cwindow
 " ステータス行に現在のgitブランチを表示する
 set statusline+=%{fugitive#statusline()}
 
+" -------------------------------
+" vim-slim
+" -------------------------------
+autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 
 " -------------------------------
 " neocomplete コード補完
