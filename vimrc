@@ -21,6 +21,8 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/neocomplete.vim'
 " Vimの画面の一番下にあるステータスラインの表示内容が強化される
 NeoBundle 'itchyny/lightline.vim'
+" インデントに色を付けて見やすくする
+NeoBundle 'Yggdroot/indentLine'
 
 " ==== ruby ====
 " 静的解析
@@ -32,6 +34,8 @@ NeoBundle 'tpope/vim-endwise'
 " メソッド定義元へのジャンプ(Ctrl+]で移動, Ctrl+tで戻る)
 " ctagsのインストールが別途必要
 NeoBundle 'szw/vim-tags'
+" Rails向けのコマンドを提供する
+NeoBundle 'tpope/vim-rails'
 
 " ==== golang ====
 " golangコード補完
@@ -69,6 +73,7 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 autocmd QuickFixCmdPost *grep* cwindow
 " ステータス行に現在のgitブランチを表示する
 set statusline+=%{fugitive#statusline()}
+
 
 " -------------------------------
 " vim-slim
@@ -122,6 +127,41 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
+
+
+"------------------------------------
+" vim-rails
+"------------------------------------
+""{{{
+"有効化
+let g:rails_default_file='config/database.yml'
+let g:rails_level = 4
+let g:rails_mappings=1
+let g:rails_modelines=0
+" let g:rails_some_option = 1
+" let g:rails_statusline = 1
+" let g:rails_subversion=0
+" let g:rails_syntax = 1
+" let g:rails_url='http://localhost:3000'
+" let g:rails_ctags_arguments='--languages=-javascript'
+" let g:rails_ctags_arguments = ''
+function! SetUpRailsSetting()
+  nnoremap <buffer><Space>r :R<CR>
+  nnoremap <buffer><Space>a :A<CR>
+  nnoremap <buffer><Space>m :Rmodel<Space>
+  nnoremap <buffer><Space>c :Rcontroller<Space>
+  nnoremap <buffer><Space>v :Rview<Space>
+  nnoremap <buffer><Space>p :Rpreview<CR>
+endfunction
+
+aug MyAutoCmd
+  au User Rails call SetUpRailsSetting()
+aug END
+
+aug RailsDictSetting
+  au!
+aug END
+"}}}
 
 
 " --------------------------------
