@@ -239,6 +239,12 @@ colorscheme desert
 " 行番号の色
 highlight LineNr ctermfg=darkyellow
 set backspace=indent,eol,start
+" 行末の空白文字をハイライトする
+augroup HighlightTrailingSpaces
+  autocmd!
+  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+  autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+augroup END
 """"""""""""""""""""""""""""""
 
 
