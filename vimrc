@@ -65,6 +65,13 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
+""""""""""""""""""""""""""""""
+" NERDTree
+""""""""""""""""""""""""""""""
+let g:NERDTreeShowBookmarks=1
+autocmd VimEnter * NERDTree
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " -------------------------------
 " vim-fugitive
