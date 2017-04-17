@@ -41,6 +41,38 @@ NeoBundle 'tpope/vim-rails'
 " golangコード補完
 NeoBundle 'fatih/vim-go'
 
+"" front
+" HTMLやCSSのタグや属性を色付けする
+NeoBundle 'tomasr/molokai'
+" HTML5のタグに色がつく
+NeoBundle 'othree/html5.vim'
+" CSS3の内容に色がつく
+NeoBundle 'hail2u/vim-css3-syntax'
+" JavaScriptのコードに色がつく
+" NeoBundle 'jelera/vim-javascript-syntax'
+NeoBundle 'othree/yajs.vim'
+" HTML5の文法チェック
+NeoBundle 'hokaccha/vim-html5validator'
+" emmet
+NeoBundle 'mattn/emmet-vim'
+" coffee-script
+NeoBundle 'kchmck/vim-coffee-script'
+
+
+""""""""""""""""""""""""""""""
+" kchmck/vim-coffee-script
+""""""""""""""""""""""""""""""
+" vimにcoffeeファイルタイプを認識させる
+au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
+" インデント設定
+autocmd FileType coffee    setlocal sw=2 sts=2 ts=2 et
+" オートコンパイル
+"保存と同時にコンパイルする
+" autocmd BufWritePost *.coffee silent make!
+"エラーがあったら別ウィンドウで表示
+" autocmd QuickFixCmdPost * nested cwindow | redraw!
+" Ctrl-cで右ウィンドウにコンパイル結果を一時表示する
+" nnoremap <silent> <C-C> :CoffeeCompile vert <CR><C-w>h
 
 """"""""""""""""""""""""""""""
 " unit neomru
