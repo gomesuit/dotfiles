@@ -222,6 +222,10 @@ nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
+nnoremap s<Down> <C-w>j
+nnoremap s<Up> <C-w>k
+nnoremap s<Right> <C-w>l
+nnoremap s<Left> <C-w>h
 nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
 nnoremap sL <C-w>L
