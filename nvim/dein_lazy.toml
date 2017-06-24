@@ -1,3 +1,21 @@
+
+# コード補完
+# brew install python3
+# pip3 install neovim
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+depends = 'context_filetype.vim'
+on_i = 1
+hook_source = '''
+    let g:deoplete#enable_at_startup = 1
+    inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+        \ neosnippet#expandable_or_jumpable() ?
+        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+'''
+
 # ディレクトリをツリー表示
 [[plugins]]
 repo = 'scrooloose/nerdtree'
@@ -39,6 +57,7 @@ repo = 'scrooloose/syntastic'
 # slimハイライト
 [[plugins]]
 repo = 'slim-template/vim-slim'
+on_ft = ['slim']
 
 # 自動で閉じる
 [[plugins]]
