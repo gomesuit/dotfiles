@@ -238,6 +238,19 @@ nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 "  call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 "endfunction
 
+"if dein#tap('vim-submode')
+"  " http://thinca.hatenablog.com/entry/20130131/1359567419
+"  " window sizeを連続で変更する
+"  call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+"  call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+"  call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+"  call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+"  call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+"  call submode#map('bufmove', 'n', '', '<', '<C-w><')
+"  call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+"  call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+"endif
+
 
 """"""""""""""""""""""""""""""
 " 各種オプションの設定
