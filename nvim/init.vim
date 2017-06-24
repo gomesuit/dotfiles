@@ -47,9 +47,8 @@ syntax enable
 " --------------------------------------------
 "  Setting for NERDTree
 " --------------------------------------------
-nnoremap <silent><C-n> :NERDTreeToggle<CR>
 let g:NERDTreeShowBookmarks=1
-autocmd vimenter * NERDTree
+autocmd VimEnter * NERDTree
 
 
 """"""""""""""""""""""""""""""
