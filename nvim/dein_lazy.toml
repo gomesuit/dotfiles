@@ -1,14 +1,90 @@
+# ディレクトリをツリー表示
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
+# ファイルオープンを便利に
 [[plugins]]
 repo = 'Shougo/unite.vim'
 
+# 最近使ったファイルを表示
 [[plugins]]
 repo = 'Shougo/neomru.vim'
 
+# gitを操作
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+# コード補完
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
+
+# Vimの画面の一番下にあるステータスラインの表示内容が強化される
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+# インデントに色を付けて見やすくする
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+# ウィンドウのサイズ
+[[plugins]]
+repo = 'kana/vim-submode'
+
+
+# ==== ruby ====
+# 静的解析
+[[plugins]]
+repo = 'scrooloose/syntastic'
+
+# slimハイライト
+[[plugins]]
+repo = 'slim-template/vim-slim'
+
+# 自動で閉じる
+[[plugins]]
+repo = 'tpope/vim-endwise'
+
+# メソッド定義元へのジャンプ(Ctrl+]で移動, Ctrl+tで戻る)
+# ctagsのインストールが別途必要
+[[plugins]]
+repo = 'szw/vim-tags'
+
+# Rails向けのコマンドを提供する
+[[plugins]]
+repo = 'tpope/vim-rails'
+
+
+# ==== golang ====
+# golangコード補完
+[[plugins]]
+repo = 'fatih/vim-go'
+
+
+# ==== front ====
+# HTMLやCSSのタグや属性を色付けする
+[[plugins]]
+repo = 'tomasr/molokai'
+
+# HTML5のタグに色がつく
+[[plugins]]
+repo = 'othree/html5.vim'
+
+# CSS3の内容に色がつく
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+
+# JavaScriptのコードに色がつく
+#[[plugins]]
+#repo = 'jelera/vim-javascript-syntax'
+
+# HTML5の文法チェック
+[[plugins]]
+repo = 'hokaccha/vim-html5validator'
+
+# emmet
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
+# coffee-script
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
