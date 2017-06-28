@@ -6,4 +6,6 @@ cd "$(dirname "$0")" || exit
 ln -sf "$(pwd)"/vimrc ~/.vimrc
 
 # neovim
-ln -sf "$(pwd)"/nvim ~/.config
+#ln -sf "$(pwd)"/nvim ~/.config
+mkdir -p ~/.config/nvim
+ln -sf "$(pwd)"/vimrc ~/.config/nvim/init.vim
