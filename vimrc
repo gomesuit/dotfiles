@@ -204,6 +204,10 @@ aug RailsDictSetting
 aug END
 "}}}
 
+"------------------------------------
+" vim-tags
+"------------------------------------
+let g:vim_tags_ctags_binary = "/usr/local/Cellar/ctags/5.8_1/bin/ctags"
 
 " --------------------------------
 " rubocop
