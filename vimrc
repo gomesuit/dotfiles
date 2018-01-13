@@ -59,7 +59,8 @@ NeoBundle 'hokaccha/vim-html5validator'
 NeoBundle 'mattn/emmet-vim'
 " coffee-script
 NeoBundle 'kchmck/vim-coffee-script'
-
+" vue
+NeoBundle 'posva/vim-vue'
 
 """"""""""""""""""""""""""""""
 " kchmck/vim-coffee-script
@@ -115,11 +116,16 @@ autocmd QuickFixCmdPost *grep* cwindow
 " ステータス行に現在のgitブランチを表示する
 set statusline+=%{fugitive#statusline()}
 
-
 " -------------------------------
 " vim-slim
 " -------------------------------
 autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
+
+" -------------------------------
+" vim-vue
+" -------------------------------
+autocmd FileType vue syntax sync fromstart
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
 " -------------------------------
 " neocomplete コード補完
