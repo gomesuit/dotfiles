@@ -61,7 +61,8 @@ NeoBundle 'hokaccha/vim-html5validator'
 NeoBundle 'mattn/emmet-vim'
 " coffee-script
 NeoBundle 'kchmck/vim-coffee-script'
-
+" vue
+NeoBundle 'posva/vim-vue'
 
 """"""""""""""""""""""""""""""
 " kchmck/vim-coffee-script
@@ -117,11 +118,16 @@ autocmd QuickFixCmdPost *grep* cwindow
 " ステータス行に現在のgitブランチを表示する
 set statusline+=%{fugitive#statusline()}
 
-
 " -------------------------------
 " vim-slim
 " -------------------------------
 autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
+
+" -------------------------------
+" vim-vue
+" -------------------------------
+autocmd FileType vue syntax sync fromstart
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
 " -------------------------------
 " neocomplete コード補完
@@ -323,6 +329,9 @@ set autoindent
 set smartindent
 " タブ文字の表示幅
 set tabstop=2
+" sw=softtabstop, sts=shiftwidth, ts=tabstop, et=expandtabの略
+autocmd FileType java        setlocal sw=2 sts=4 ts=2 noexpandtab
+
 " Vimが挿入するインデントの幅
 set shiftwidth=2
 " 行頭の余白内で Tab を打ち込むと、'shiftwidth' の数だけインデントする
