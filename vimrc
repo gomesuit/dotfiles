@@ -25,6 +25,8 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'Yggdroot/indentLine'
 " ウィンドウのサイズ
 NeoBundle 'kana/vim-submode'
+" 開いているファイルを実行 \r or :QuickRun
+NeoBundle 'thinca/vim-quickrun'
 
 " ==== ruby ====
 " 静的解析
