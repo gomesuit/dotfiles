@@ -356,7 +356,7 @@ set whichwrap=b,s,h,l,<,>,[,]
 " 構文毎に文字色を変化させる
 syntax on
 " カラースキーマの指定
-colorscheme desert
+" colorscheme desert
 " 行番号の色
 highlight LineNr ctermfg=darkyellow
 set backspace=indent,eol,start
