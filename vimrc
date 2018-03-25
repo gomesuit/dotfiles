@@ -29,6 +29,8 @@ NeoBundle 'kana/vim-submode'
 " 開いているファイルを実行 \r or :QuickRun
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/vimproc.vim'
+" コマンド非同期実行
+NeoBundle 'tpope/vim-dispatch'
 
 " ==== ruby ====
 " 静的解析
