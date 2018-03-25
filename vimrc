@@ -11,6 +11,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " ==== common ====
 " ファイルオープンを便利に
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 " 最近使ったファイルを表示
 NeoBundle 'Shougo/neomru.vim'
 " ディレクトリをツリー表示
