@@ -18,6 +18,8 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 " gitを操作
 NeoBundle 'tpope/vim-fugitive'
+" コミット履歴表示 :Gitv or :Gitv!
+NeoBundle 'gregsexton/gitv'
 " コード補完
 NeoBundle 'Shougo/neocomplete.vim'
 " Vimの画面の一番下にあるステータスラインの表示内容が強化される
