@@ -3,7 +3,7 @@
 
 [user]
   name = gomesuit
-  email = gomesuit@gmail.com
+  email = gomesuit
 
 [alias]
   prune = fetch --prune
