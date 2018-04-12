@@ -18,6 +18,8 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 " gitを操作
 NeoBundle 'tpope/vim-fugitive'
+" 追加、削除、変更された行にマーカーを表示する
+NeoBundle 'airblade/vim-gitgutter'
 " コミット履歴表示 :Gitv or :Gitv!
 NeoBundle 'gregsexton/gitv'
 " コード補完
@@ -33,6 +35,8 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/vimproc.vim'
 " コマンド非同期実行
 NeoBundle 'tpope/vim-dispatch'
+" vimでペーストする際に、自動でpaste modeにする
+NeoBundle 'ConradIrwin/vim-bracketed-paste'
 
 " ==== ruby ====
 " 静的解析
