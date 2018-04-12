@@ -37,6 +37,8 @@ NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'tpope/vim-dispatch'
 " vimでペーストする際に、自動でpaste modeにする
 NeoBundle 'ConradIrwin/vim-bracketed-paste'
+" 100以上の構文プラグイン
+NeoBundle 'sheerun/vim-polyglot'
 
 " ==== ruby ====
 " 静的解析
