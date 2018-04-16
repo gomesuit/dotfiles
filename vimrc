@@ -48,6 +48,8 @@ NeoBundle 'w0rp/ale' " https://github.com/w0rp/ale
 let g:ale_emit_conflict_warnings = 0
 " helper for unix
 NeoBundle 'tpope/vim-eunuch'
+" 囲み文字置き換えキーバインドを追加 ex) cs"' ds'
+NeoBundle 'tpope/vim-surround'
 
 " ==== ruby ====
 " 静的解析
