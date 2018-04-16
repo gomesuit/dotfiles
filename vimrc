@@ -46,6 +46,8 @@ NeoBundle 'sheerun/vim-polyglot'
 " 非同期的Lint
 NeoBundle 'w0rp/ale' " https://github.com/w0rp/ale
 let g:ale_emit_conflict_warnings = 0
+" helper for unix
+NeoBundle 'tpope/vim-eunuch'
 
 " ==== ruby ====
 " 静的解析
@@ -135,7 +137,7 @@ let NERDTreeShowHidden = 1
 " デフォルトでツリーを表示させる
 let g:nerdtree_tabs_open_on_console_startup=1
 " 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " -------------------------------
 " vim-fugitive
