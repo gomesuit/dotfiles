@@ -384,7 +384,7 @@ set smartindent
 " タブ文字の表示幅
 set tabstop=2
 " sw=softtabstop, sts=shiftwidth, ts=tabstop, et=expandtabの略
-autocmd FileType java        setlocal sw=2 sts=4 ts=2 noexpandtab
+" autocmd FileType java        setlocal sw=2 sts=4 ts=2 noexpandtab
 
 " Vimが挿入するインデントの幅
 set shiftwidth=2
