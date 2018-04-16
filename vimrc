@@ -53,6 +53,8 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
 " 自動で閉じる
 NeoBundle 'tpope/vim-endwise'
+" タブとスペースの自動検知
+NeoBundle 'tpope/vim-sleuth'
 
 " ==== ruby ====
 " 静的解析
