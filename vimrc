@@ -16,6 +16,7 @@ NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'Shougo/neomru.vim'
 " ディレクトリをツリー表示
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'jistr/vim-nerdtree-tabs'
 " gitを操作
 NeoBundle 'tpope/vim-fugitive'
 " 追加、削除、変更された行にマーカーを表示する
@@ -126,10 +127,15 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 """"""""""""""""""""""""""""""
 " NERDTree
 """"""""""""""""""""""""""""""
-let g:NERDTreeShowBookmarks=1
-autocmd VimEnter * NERDTree
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" 隠しファイルを表示する
+let NERDTreeShowHidden = 1
+" ブックマークを表示する
+" let g:NERDTreeShowBookmarks=1
+" autocmd VimEnter * NERDTree
+" デフォルトでツリーを表示させる
+let g:nerdtree_tabs_open_on_console_startup=1
+" 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " -------------------------------
 " vim-fugitive
@@ -282,6 +288,8 @@ nnoremap sL <C-w>L
 nnoremap sH <C-w>H
 nnoremap sn gt
 nnoremap sp gT
+nnoremap th gT
+nnoremap tl gt
 nnoremap sr <C-w>r
 nnoremap s= <C-w>=
 nnoremap sw <C-w>w
@@ -290,6 +298,7 @@ nnoremap sO <C-w>=
 nnoremap sN :<C-u>bn<CR>
 nnoremap sP :<C-u>bp<CR>
 nnoremap st :<C-u>tabnew<CR>
+nnoremap tn :<C-u>tabnew<CR>
 nnoremap sT :<C-u>Unite tab<CR>
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
