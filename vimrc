@@ -51,14 +51,14 @@ NeoBundle 'tpope/vim-eunuch'
 " 囲み文字置き換えキーバインドを追加 ex) cs"' ds'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-repeat'
+" 自動で閉じる
+NeoBundle 'tpope/vim-endwise'
 
 " ==== ruby ====
 " 静的解析
 NeoBundle 'scrooloose/syntastic'
 " slimハイライト
 NeoBundle 'slim-template/vim-slim'
-" 自動で閉じる
-NeoBundle 'tpope/vim-endwise'
 " メソッド定義元へのジャンプ(Ctrl+]で移動, Ctrl+tで戻る)
 " ctagsのインストールが別途必要
 NeoBundle 'szw/vim-tags'
