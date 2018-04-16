@@ -25,7 +25,10 @@ NeoBundle 'gregsexton/gitv'
 " コード補完
 NeoBundle 'Shougo/neocomplete.vim'
 " Vimの画面の一番下にあるステータスラインの表示内容が強化される
-NeoBundle 'itchyny/lightline.vim'
+" NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
+" let g:airline_theme="powerlineish"
 " インデントに色を付けて見やすくする
 NeoBundle 'Yggdroot/indentLine'
 " ウィンドウのサイズ
