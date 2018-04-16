@@ -46,6 +46,7 @@ NeoBundle 'sheerun/vim-polyglot'
 " 非同期的Lint
 NeoBundle 'w0rp/ale' " https://github.com/w0rp/ale
 let g:ale_emit_conflict_warnings = 0
+highlight ALEWarning ctermbg=black
 " helper for unix
 NeoBundle 'tpope/vim-eunuch'
 " 囲み文字置き換えキーバインドを追加 ex) cs"' ds'
