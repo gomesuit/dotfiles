@@ -50,6 +50,7 @@ let g:ale_emit_conflict_warnings = 0
 NeoBundle 'tpope/vim-eunuch'
 " 囲み文字置き換えキーバインドを追加 ex) cs"' ds'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
 
 " ==== ruby ====
 " 静的解析
