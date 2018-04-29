@@ -9,6 +9,7 @@
     "C-j": "peco.SelectDown",
     "C-k": "peco.SelectUp",
     "C-h": "peco.ToggleRangeMode",
+    "C-v": "peco.ToggleRangeMode",
     "C-a": "selectAllAndFinish"
   }
 }
