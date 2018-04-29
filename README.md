@@ -14,7 +14,7 @@ ex)
 ```bash
 mkrc .vimrc
 rcdn .vimrc
-lsrc # dry-run
+lsrc -d $PWD # dry-run
 ```
 
 - https://github.com/thoughtbot/dotfiles
