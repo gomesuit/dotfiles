@@ -1,7 +1,14 @@
 {
+  "Action": {
+    "selectAllAndFinish": [
+      "peco.SelectAll",
+      "peco.Finish"
+    ]
+  },
   "Keymap": {
     "C-j": "peco.SelectDown",
     "C-k": "peco.SelectUp",
-    "C-h": "peco.ToggleRangeMode"
+    "C-h": "peco.ToggleRangeMode",
+    "C-h,C-h": "selectAllAndFinish"
   }
 }
