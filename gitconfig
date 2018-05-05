@@ -39,6 +39,7 @@
 [difftool]
   prompt = false
 [difftool "icdiff"]
+  # brew install icdiff
   cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
