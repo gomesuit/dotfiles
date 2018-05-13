@@ -24,7 +24,11 @@ NeoBundle 'airblade/vim-gitgutter'
 " コミット履歴表示 :Gitv or :Gitv!
 NeoBundle 'gregsexton/gitv'
 " コード補完
-NeoBundle 'Shougo/neocomplete.vim'
+" NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/deoplete.nvim'
+NeoBundle 'roxma/nvim-yarp'
+NeoBundle 'roxma/vim-hug-neovim-rpc' " pip3 install --upgrade neovim
+let g:deoplete#enable_at_startup = 1
 " Vimの画面の一番下にあるステータスラインの表示内容が強化される
 " NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'bling/vim-airline'
@@ -56,10 +60,10 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-endwise'
 " タブとスペースの自動検知
 NeoBundle 'tpope/vim-sleuth'
+" 静的解析
+NeoBundle 'vim-syntastic/syntastic'
 
 " ==== ruby ====
-" 静的解析
-NeoBundle 'scrooloose/syntastic'
 " slimハイライト
 NeoBundle 'slim-template/vim-slim'
 " メソッド定義元へのジャンプ(Ctrl+]で移動, Ctrl+tで戻る)
@@ -93,6 +97,11 @@ NeoBundle 'mattn/emmet-vim'
 NeoBundle 'kchmck/vim-coffee-script'
 " vue
 NeoBundle 'posva/vim-vue'
+
+" ==== terraform ====
+NeoBundle 'hashivim/vim-terraform'
+let g:terraform_fmt_on_save = 1
+NeoBundle 'juliosueiras/vim-terraform-completion'
 
 """"""""""""""""""""""""""""""
 " kchmck/vim-coffee-script
@@ -165,56 +174,16 @@ autocmd FileType vue syntax sync fromstart
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
 " -------------------------------
-" neocomplete コード補完
+" deoplete
 " -------------------------------
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-let g:neocomplete#sources#omni#input_patterns = {
-\   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
-\}
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-
+inoremap <silent><expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ <SID>check_back_space() ? "\<TAB>" :
+    \ deoplete#mappings#manual_complete()
+function! s:check_back_space() abort "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
 
 "------------------------------------
 " vim-rails
