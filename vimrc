@@ -73,7 +73,7 @@ NeoBundle 'szw/vim-tags'
 NeoBundle 'tpope/vim-rails'
 " ruby 補完
 " gem install rcodetools
-NeoBundle 'osyo-manga/vim-monster'
+" NeoBundle 'osyo-manga/vim-monster'
 
 " ==== golang ====
 " golangコード補完
