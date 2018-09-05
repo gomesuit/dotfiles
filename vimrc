@@ -47,6 +47,7 @@ NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'ConradIrwin/vim-bracketed-paste'
 " 100以上の構文プラグイン
 NeoBundle 'sheerun/vim-polyglot'
+let g:polyglot_disabled = ['graphql']
 " 非同期的Lint
 NeoBundle 'w0rp/ale' " https://github.com/w0rp/ale
 let g:ale_emit_conflict_warnings = 0
