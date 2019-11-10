@@ -63,6 +63,7 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-sleuth'
 " 静的解析
 NeoBundle 'vim-syntastic/syntastic'
+let g:syntastic_python_checkers = ['pylint']
 
 " ==== ruby ====
 " slimハイライト
@@ -300,9 +301,7 @@ let g:syntastic_ruby_checkers = ['rubocop']
 
 " --------------------------------
 " thinca/vim-quickrun
-" --------------------------------
-let g:quickrun_config = get(g:, 'quickrun_config', {})
-let g:quickrun_config._ = {
+" -------------------------------- let g:quickrun_config = get(g:, 'quickrun_config', {}) let g:quickrun_config._ = {
       \ 'runner'    : 'vimproc',
       \ 'runner/vimproc/updatetime' : 60,
       \ 'outputter' : 'error',
