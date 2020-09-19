@@ -16,13 +16,20 @@ if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+  " >>> myplugin
+  " 補完
   call dein#add('Shougo/deoplete.nvim')
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
     call dein#add('roxma/vim-hug-neovim-rpc')
   endif
+  let g:deoplete#enable_at_startup = 1
+  " Tab補完の設定
+  inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+        \ neosnippet#expandable_or_jumpable() ?
+        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
 
-  " >>> myplugin
   " 追加、削除、変更された行にマーカーを表示する
   call dein#add('airblade/vim-gitgutter')
 
