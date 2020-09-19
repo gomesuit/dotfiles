@@ -20,10 +20,8 @@ if dein#load_state(s:dein_dir)
   " >>> myplugin
   " 補完
   call dein#add('Shougo/deoplete.nvim')
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
+  call dein#add('roxma/nvim-yarp')
+  call dein#add('roxma/vim-hug-neovim-rpc')
   let g:deoplete#enable_at_startup = 1
   " Tab補完の設定
   inoremap <expr><tab> pumvisible() ? "\<C-n>" :
@@ -49,7 +47,10 @@ if dein#load_state(s:dein_dir)
   " terraform
   call dein#add('hashivim/vim-terraform')
   let g:terraform_fmt_on_save = 1
-  call dein#add('juliosueiras/vim-terraform-completion')
+  "" 補完
+  let g:deoplete#omni_patterns = {}
+  let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
+  call deoplete#initialize()
   " <<< myplugin
 
   call dein#end()
@@ -57,16 +58,20 @@ if dein#load_state(s:dein_dir)
 endif
 
 " >>> myplugin
+
 " ディレクトリをツリー表示
 call dein#add('preservim/nerdtree')
 call dein#add('jistr/vim-nerdtree-tabs')
 let NERDTreeShowHidden=1
 let g:nerdtree_tabs_open_on_console_startup=1
+
 " <<< myplugin
 
 if dein#check_install()
   call dein#install()
 endif
+
+call map(dein#check_clean(), "delete(v:val, 'rf')")
 
 filetype plugin indent on
 syntax enable
