@@ -30,6 +30,10 @@ if dein#load_state(s:dein_dir)
 
   " 追加、削除、変更された行にマーカーを表示する
   call dein#add('airblade/vim-gitgutter')
+  set updatetime=250
+
+  " git拡張
+  call dein#add('tpope/vim-fugitive')
 
   " Vimの画面の一番下にあるステータスラインの表示内容が強化される
   call dein#add('bling/vim-airline')
