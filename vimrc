@@ -33,22 +33,11 @@ if dein#load_state(s:dein_dir)
   " vimでペーストする際に、自動でpaste modeにする
   call dein#add('ConradIrwin/vim-bracketed-paste')
 
-  " 100以上の構文プラグイン
-  call dein#add('sheerun/vim-polyglot')
-
-  " 非同期的Lint
-  call dein#add('w0rp/ale')
-  let g:ale_emit_conflict_warnings = 0
-  highlight ALEWarning ctermbg=black
-
   " helper for unix
   call dein#add('tpope/vim-eunuch')
 
   " タブとスペースの自動検知
   call dein#add('tpope/vim-sleuth')
-
-  " 静的解析
-  call dein#add('vim-syntastic/syntastic')
 
   " terraform
   call dein#add('hashivim/vim-terraform')
