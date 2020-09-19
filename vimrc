@@ -23,12 +23,6 @@ if dein#load_state(s:dein_dir)
   endif
 
   " >>> myplugin
-  " ディレクトリをツリー表示
-  call dein#add('preservim/nerdtree')
-  call dein#add('jistr/vim-nerdtree-tabs')
-  let NERDTreeShowHidden=1
-  let g:nerdtree_tabs_open_on_console_startup=1
-
   " 追加、削除、変更された行にマーカーを表示する
   call dein#add('airblade/vim-gitgutter')
 
@@ -39,6 +33,23 @@ if dein#load_state(s:dein_dir)
   " vimでペーストする際に、自動でpaste modeにする
   call dein#add('ConradIrwin/vim-bracketed-paste')
 
+  " 100以上の構文プラグイン
+  call dein#add('sheerun/vim-polyglot')
+
+  " 非同期的Lint
+  call dein#add('w0rp/ale')
+  let g:ale_emit_conflict_warnings = 0
+  highlight ALEWarning ctermbg=black
+
+  " helper for unix
+  call dein#add('tpope/vim-eunuch')
+
+  " タブとスペースの自動検知
+  call dein#add('tpope/vim-sleuth')
+
+  " 静的解析
+  call dein#add('vim-syntastic/syntastic')
+
   " terraform
   call dein#add('hashivim/vim-terraform')
   let g:terraform_fmt_on_save = 1
@@ -48,6 +59,14 @@ if dein#load_state(s:dein_dir)
   call dein#end()
   call dein#save_state()
 endif
+
+" >>> myplugin
+" ディレクトリをツリー表示
+call dein#add('preservim/nerdtree')
+call dein#add('jistr/vim-nerdtree-tabs')
+let NERDTreeShowHidden=1
+let g:nerdtree_tabs_open_on_console_startup=1
+" <<< myplugin
 
 if dein#check_install()
   call dein#install()
