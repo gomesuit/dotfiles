@@ -1,317 +1,60 @@
-" -------------------------------
-" NeoBundle
-" -------------------------------
 if &compatible
   set nocompatible
 endif
-set runtimepath^=~/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
 
-" ==== common ====
-" ファイルオープンを便利に
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-" 最近使ったファイルを表示
-NeoBundle 'Shougo/neomru.vim'
-" ディレクトリをツリー表示
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'jistr/vim-nerdtree-tabs'
-" gitを操作
-NeoBundle 'tpope/vim-fugitive'
-" 追加、削除、変更された行にマーカーを表示する
-NeoBundle 'airblade/vim-gitgutter'
-" コミット履歴表示 :Gitv or :Gitv!
-NeoBundle 'gregsexton/gitv'
-" コード補完
-NeoBundle 'Shougo/neocomplete.vim'
-" NeoBundle 'Shougo/deoplete.nvim'
-" NeoBundle 'roxma/nvim-yarp'
-" NeoBundle 'roxma/vim-hug-neovim-rpc' " pip3 install --upgrade neovim
-let g:deoplete#enable_at_startup = 1
-" Vimの画面の一番下にあるステータスラインの表示内容が強化される
-" NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'bling/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-" let g:airline_theme="powerlineish"
-" インデントに色を付けて見やすくする
-NeoBundle 'Yggdroot/indentLine'
-" ウィンドウのサイズ
-NeoBundle 'kana/vim-submode'
-" 開いているファイルを実行 \r or :QuickRun
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'Shougo/vimproc.vim'
-" コマンド非同期実行
-NeoBundle 'tpope/vim-dispatch'
-" vimでペーストする際に、自動でpaste modeにする
-NeoBundle 'ConradIrwin/vim-bracketed-paste'
-" 100以上の構文プラグイン
-NeoBundle 'sheerun/vim-polyglot'
-let g:polyglot_disabled = ['graphql']
-" 非同期的Lint
-NeoBundle 'w0rp/ale' " https://github.com/w0rp/ale
-let g:ale_emit_conflict_warnings = 0
-highlight ALEWarning ctermbg=black
-" helper for unix
-NeoBundle 'tpope/vim-eunuch'
-" 囲み文字置き換えキーバインドを追加 ex) cs"' ds'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-repeat'
-" 自動で閉じる
-NeoBundle 'tpope/vim-endwise'
-" タブとスペースの自動検知
-NeoBundle 'tpope/vim-sleuth'
-" 静的解析
-NeoBundle 'vim-syntastic/syntastic'
-let g:syntastic_python_checkers = ['pylint']
+let s:dein_dir = expand('~/.cache/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-" ==== ruby ====
-" slimハイライト
-NeoBundle 'slim-template/vim-slim'
-" メソッド定義元へのジャンプ(Ctrl+]で移動, Ctrl+tで戻る)
-" ctagsのインストールが別途必要
-NeoBundle 'szw/vim-tags'
-" Rails向けのコマンドを提供する
-NeoBundle 'tpope/vim-rails'
-" ruby 補完
-" gem install rcodetools
-" NeoBundle 'osyo-manga/vim-monster'
-
-" ==== golang ====
-" golangコード補完
-NeoBundle 'fatih/vim-go'
-
-"" front
-" HTMLやCSSのタグや属性を色付けする
-NeoBundle 'tomasr/molokai'
-" HTML5のタグに色がつく
-NeoBundle 'othree/html5.vim'
-" CSS3の内容に色がつく
-NeoBundle 'hail2u/vim-css3-syntax'
-" JavaScriptのコードに色がつく
-" NeoBundle 'jelera/vim-javascript-syntax'
-NeoBundle 'othree/yajs.vim'
-" HTML5の文法チェック
-NeoBundle 'hokaccha/vim-html5validator'
-" emmet
-NeoBundle 'mattn/emmet-vim'
-" coffee-script
-NeoBundle 'kchmck/vim-coffee-script'
-" vue
-NeoBundle 'posva/vim-vue'
-
-" ==== terraform ====
-NeoBundle 'hashivim/vim-terraform'
-let g:terraform_fmt_on_save = 1
-NeoBundle 'juliosueiras/vim-terraform-completion'
-
-""""""""""""""""""""""""""""""
-" kchmck/vim-coffee-script
-""""""""""""""""""""""""""""""
-" vimにcoffeeファイルタイプを認識させる
-au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
-" インデント設定
-autocmd FileType coffee    setlocal sw=2 sts=2 ts=2 et
-" オートコンパイル
-"保存と同時にコンパイルする
-" autocmd BufWritePost *.coffee silent make!
-"エラーがあったら別ウィンドウで表示
-" autocmd QuickFixCmdPost * nested cwindow | redraw!
-" Ctrl-cで右ウィンドウにコンパイル結果を一時表示する
-" nnoremap <silent> <C-C> :CoffeeCompile vert <CR><C-w>h
-
-""""""""""""""""""""""""""""""
-" unit neomru
-""""""""""""""""""""""""""""""
-" 入力モードで開始する
-let g:unite_enable_start_insert=1
-" バッファ一覧
-noremap <C-P> :Unite buffer<CR>
-" ファイル一覧
-noremap <C-N> :Unite -buffer-name=file file<CR>
-" 最近使ったファイルの一覧
-noremap <C-Z> :Unite file_mru<CR>
-" sourcesを「今開いているファイルのディレクトリ」とする
-noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
-" ウィンドウを分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-" ウィンドウを縦に分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-" ESCキーを2回押すと終了する
-au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
-au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-
-""""""""""""""""""""""""""""""
-" NERDTree
-""""""""""""""""""""""""""""""
-" 隠しファイルを表示する
-let NERDTreeShowHidden = 1
-" ブックマークを表示する
-" let g:NERDTreeShowBookmarks=1
-" autocmd VimEnter * NERDTree
-" デフォルトでツリーを表示させる
-let g:nerdtree_tabs_open_on_console_startup=1
-" 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" -------------------------------
-" vim-fugitive
-" -------------------------------
-" grep検索の実行後にQuickFix Listを表示する
-autocmd QuickFixCmdPost *grep* cwindow
-" ステータス行に現在のgitブランチを表示する
-set statusline+=%{fugitive#statusline()}
-
-" -------------------------------
-" vim-slim
-" -------------------------------
-autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
-
-" -------------------------------
-" vim-vue
-" -------------------------------
-autocmd FileType vue syntax sync fromstart
-autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
-
-" -------------------------------
-" neocomplete コード補完
-" -------------------------------
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-let g:neocomplete#sources#omni#input_patterns = {
-\   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
-\}
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_dir)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
 
-" Syntastic Config
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('Shougo/deoplete.nvim')
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
 
-" (Optional)Remove Info(Preview) window
-set completeopt-=preview
+  " >>> myplugin
+  " ディレクトリをツリー表示
+  call dein#add('preservim/nerdtree')
+  call dein#add('jistr/vim-nerdtree-tabs')
+  let NERDTreeShowHidden=1
+  let g:nerdtree_tabs_open_on_console_startup=1
 
-" (Optional)Hide Info(Preview) window after completions
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+  " 追加、削除、変更された行にマーカーを表示する
+  call dein#add('airblade/vim-gitgutter')
 
-" (Optional) Enable terraform plan to be include in filter
-let g:syntastic_terraform_tffilter_plan = 1
+  " Vimの画面の一番下にあるステータスラインの表示内容が強化される
+  call dein#add('bling/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
 
-" (Optional) Default: 0, enable(1)/disable(0) plugin's keymapping
-let g:terraform_completion_keys = 1
+  " vimでペーストする際に、自動でpaste modeにする
+  call dein#add('ConradIrwin/vim-bracketed-paste')
 
-" (Optional) Default: 1, enable(1)/disable(0) terraform module registry completion
-let g:terraform_registry_module_completion = 0
+  " terraform
+  call dein#add('hashivim/vim-terraform')
+  let g:terraform_fmt_on_save = 1
+  call dein#add('juliosueiras/vim-terraform-completion')
+  " <<< myplugin
 
-"------------------------------------
-" vim-rails
-"------------------------------------
-""{{{
-"有効化
-let g:rails_default_file='config/database.yml'
-let g:rails_level = 4
-let g:rails_mappings=1
-let g:rails_modelines=0
-" let g:rails_some_option = 1
-" let g:rails_statusline = 1
-" let g:rails_subversion=0
-" let g:rails_syntax = 1
-" let g:rails_url='http://localhost:3000'
-" let g:rails_ctags_arguments='--languages=-javascript'
-" let g:rails_ctags_arguments = ''
-function! SetUpRailsSetting()
-  nnoremap <buffer><Space>r :R<CR>
-  nnoremap <buffer><Space>a :A<CR>
-  nnoremap <buffer><Space>m :Rmodel<Space>
-  nnoremap <buffer><Space>c :Rcontroller<Space>
-  nnoremap <buffer><Space>v :Rview<Space>
-  nnoremap <buffer><Space>p :Rpreview<CR>
-endfunction
+  call dein#end()
+  call dein#save_state()
+endif
 
-aug MyAutoCmd
-  au User Rails call SetUpRailsSetting()
-aug END
+if dein#check_install()
+  call dein#install()
+endif
 
-aug RailsDictSetting
-  au!
-aug END
-"}}}
-
-"------------------------------------
-" vim-tags
-"------------------------------------
-let g:vim_tags_ctags_binary = "/usr/local/Cellar/ctags/5.8_1/bin/ctags"
-
-" --------------------------------
-" rubocop
-" --------------------------------
-" syntastic_mode_mapをactiveにするとバッファ保存時にsyntasticが走る
-" active_filetypesに、保存時にsyntasticを走らせるファイルタイプを指定する
-"let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
-"let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_mode_map = { 'mode': 'passive' }
-
-" --------------------------------
-" thinca/vim-quickrun
-" -------------------------------- let g:quickrun_config = get(g:, 'quickrun_config', {}) let g:quickrun_config._ = {
-      \ 'runner'    : 'vimproc',
-      \ 'runner/vimproc/updatetime' : 60,
-      \ 'outputter' : 'error',
-      \ 'outputter/error/success' : 'buffer',
-      \ 'outputter/error/error'   : 'quickfix',
-      \ 'outputter/buffer/split'  : ':rightbelow 8sp',
-      \ 'outputter/buffer/close_on_empty' : 1,
-      \ }
-
+filetype plugin indent on
+syntax enable
 
 """"""""""""""""""""""""""""""
 " キーマッピング
@@ -350,24 +93,7 @@ nnoremap sw :<C-u>w<CR>
 nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
-"tnoremap <silent> <ESC> <C-\><C-n>
 
-let s:bundle = neobundle#get("vim-submode")
-function! s:bundle.hooks.on_source(bundle)
-  call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
-  call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
-  call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
-  call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
-  call submode#map('bufmove', 'n', '', '>', '<C-w>>')
-  call submode#map('bufmove', 'n', '', '<', '<C-w><')
-  call submode#map('bufmove', 'n', '', '+', '<C-w>+')
-  call submode#map('bufmove', 'n', '', '-', '<C-w>-')
-endfunction
-
-" Required:
-call neobundle#end()
-filetype plugin indent on
-NeoBundleCheck
 
 """"""""""""""""""""""""""""""
 " 各種オプションの設定
@@ -382,10 +108,8 @@ set ruler
 set cmdheight=2
 " エディタウィンドウの末尾から2行目にステータスラインを常時表示させる
 set laststatus=2
-" ステータス行に表示させる情報の指定(どこからかコピペしたので細かい意味はわかっていない)
+" ステータス行に表示させる情報の指定
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
-" ステータス行に現在のgitブランチを表示する
-set statusline+=%{fugitive#statusline()}
 " ウインドウのタイトルバーにファイルのパス情報等を表示する
 set title
 " コマンドラインモードで<Tab>キーによるファイル名補完を有効にする
@@ -431,10 +155,6 @@ set shiftwidth=2
 set smarttab
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,]
-" 構文毎に文字色を変化させる
-syntax on
-" カラースキーマの指定
-" colorscheme desert
 " 行番号の色
 highlight LineNr ctermfg=darkyellow
 set backspace=indent,eol,start
@@ -444,4 +164,3 @@ augroup HighlightTrailingSpaces
   autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
   autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
 augroup END
-""""""""""""""""""""""""""""""
