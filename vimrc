@@ -18,16 +18,6 @@ if dein#load_state(s:dein_dir)
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " >>> myplugin
-  " 補完
-  call dein#add('Shougo/deoplete.nvim')
-  call dein#add('roxma/nvim-yarp')
-  call dein#add('roxma/vim-hug-neovim-rpc')
-  let g:deoplete#enable_at_startup = 1
-  " Tab補完の設定
-  inoremap <expr><tab> pumvisible() ? "\<C-n>" :
-        \ neosnippet#expandable_or_jumpable() ?
-        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
-
   " 追加、削除、変更された行にマーカーを表示する
   call dein#add('airblade/vim-gitgutter')
   set updatetime=250
@@ -47,14 +37,6 @@ if dein#load_state(s:dein_dir)
 
   " タブとスペースの自動検知
   call dein#add('tpope/vim-sleuth')
-
-  " terraform
-  call dein#add('hashivim/vim-terraform')
-  let g:terraform_fmt_on_save = 1
-  "" 補完
-  let g:deoplete#omni_patterns = {}
-  let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
-  call deoplete#initialize()
   " <<< myplugin
 
   call dein#end()
@@ -62,6 +44,23 @@ if dein#load_state(s:dein_dir)
 endif
 
 " >>> myplugin
+" 補完
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('roxma/nvim-yarp')
+call dein#add('roxma/vim-hug-neovim-rpc')
+let g:deoplete#enable_at_startup = 1
+" Tab補完の設定
+inoremap <expr><tab> pumvisible() ? "\<C-n>" :
+      \ neosnippet#expandable_or_jumpable() ?
+      \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+
+" terraform
+call dein#add('hashivim/vim-terraform')
+let g:terraform_fmt_on_save = 1
+"" 補完
+let g:deoplete#omni_patterns = {}
+let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
+call deoplete#initialize()
 
 " ディレクトリをツリー表示
 call dein#add('preservim/nerdtree')
