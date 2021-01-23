@@ -37,6 +37,12 @@ if dein#load_state(s:dein_dir)
 
   " タブとスペースの自動検知
   call dein#add('tpope/vim-sleuth')
+
+  " A collection of language packs for Vim.
+  call dein#add('sheerun/vim-polyglot')
+
+  " Lint Engine
+  call dein#add('dense-analysis/ale')
   " <<< myplugin
 
   call dein#end()
