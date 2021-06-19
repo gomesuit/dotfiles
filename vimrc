@@ -44,7 +44,7 @@ if dein#load_state(s:dein_dir)
   " Lint Engine
   call dein#add('dense-analysis/ale')
 
-  " commentout shortcut
+  " commentout shortcut, Use gc
   call dein#add('tpope/vim-commentary')
   " <<< myplugin
 
