@@ -4,6 +4,12 @@
 brew install rcm
 ```
 
+# Install tmux
+
+```bash
+$ brew install tmux reattach-to-user-namespace
+```
+
 # Setup the dotfiles
 
 ```bash
