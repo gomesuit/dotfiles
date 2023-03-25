@@ -18,6 +18,7 @@ if dein#load_state(s:dein_dir)
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " >>> myplugin
+
   " 追加、削除、変更された行にマーカーを表示する
   call dein#add('airblade/vim-gitgutter')
   set updatetime=250
@@ -46,6 +47,7 @@ if dein#load_state(s:dein_dir)
 
   " commentout shortcut, Use gc
   call dein#add('tpope/vim-commentary')
+
   " <<< myplugin
 
   call dein#end()
@@ -76,6 +78,10 @@ call dein#add('preservim/nerdtree')
 call dein#add('jistr/vim-nerdtree-tabs')
 let NERDTreeShowHidden=1
 let g:nerdtree_tabs_open_on_console_startup=1
+
+if has('nvim') || has('patch-9.0.0185')
+  call dein#add('github/copilot.vim')
+endif
 
 " <<< myplugin
 
