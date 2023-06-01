@@ -114,6 +114,8 @@ nnoremap sn gt
 nnoremap sp gT
 nnoremap th gT
 nnoremap tl gt
+nnoremap <C-k> gt
+nnoremap <C-j> gT
 nnoremap sr <C-w>r
 nnoremap s= <C-w>=
 nnoremap sw <C-w>w
