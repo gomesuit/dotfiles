@@ -57,8 +57,10 @@ endif
 " >>> myplugin
 " 補完
 call dein#add('Shougo/deoplete.nvim')
-call dein#add('roxma/nvim-yarp')
-call dein#add('roxma/vim-hug-neovim-rpc')
+if !has('nvim')
+  call dein#add('roxma/nvim-yarp')
+  call dein#add('roxma/vim-hug-neovim-rpc')
+endif
 let g:deoplete#enable_at_startup = 1
 " Tab補完の設定
 inoremap <expr><tab> pumvisible() ? "\<C-n>" :
