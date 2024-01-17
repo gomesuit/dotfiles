@@ -50,7 +50,9 @@ if dein#load_state(s:dein_dir)
 
   " ddc.vim
   call dein#add('Shougo/ddc.vim')
+  call dein#add('Shougo/pum.vim')
   call dein#add('vim-denops/denops.vim')
+
   " Install UIs
   call dein#add('Shougo/ddc-ui-native')
 
@@ -61,16 +63,15 @@ if dein#load_state(s:dein_dir)
   call dein#add('Shougo/ddc-matcher_head')
   call dein#add('Shougo/ddc-sorter_rank')
 
+  call ddc#custom#patch_global('ui', 'native')
   call ddc#custom#patch_global('sources', ['around'])
   call ddc#custom#patch_global('sourceOptions', {
+        \ 'around': {'mark': '[Around]'},
         \ '_': {
         \   'matchers': ['matcher_head'],
         \   'sorters': ['sorter_rank']},
         \ })
   call ddc#enable()
-
-  " pum
-  call dein#add('Shougo/pum.vim')
 
   " <<< myplugin
 
@@ -141,6 +142,11 @@ nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 
+inoremap <silent><expr> <TAB>
+      \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+      \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+      \ '<TAB>' : ddc#map#manual_complete()
+" inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
 
 """"""""""""""""""""""""""""""
 " 各種オプションの設定
