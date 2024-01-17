@@ -57,10 +57,6 @@ endif
 " >>> myplugin
 " 補完
 call dein#add('Shougo/deoplete.nvim')
-if !has('nvim')
-  call dein#add('roxma/nvim-yarp')
-  call dein#add('roxma/vim-hug-neovim-rpc')
-endif
 let g:deoplete#enable_at_startup = 1
 " Tab補完の設定
 inoremap <expr><tab> pumvisible() ? "\<C-n>" :
@@ -81,8 +77,11 @@ call dein#add('jistr/vim-nerdtree-tabs')
 let NERDTreeShowHidden=1
 let g:nerdtree_tabs_open_on_console_startup=1
 
-if has('nvim') || has('patch-9.0.0185')
-  call dein#add('github/copilot.vim')
+" Neovim専用の設定
+if has('nvim')
+  " ここにNeovim固有の設定を追加
+  " 例: 組み込みのターミナルエミュレータの設定
+  " ...
 endif
 
 " <<< myplugin
