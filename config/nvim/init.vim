@@ -48,6 +48,30 @@ if dein#load_state(s:dein_dir)
   " commentout shortcut, Use gc
   call dein#add('tpope/vim-commentary')
 
+  " ddc.vim
+  call dein#add('Shougo/ddc.vim')
+  call dein#add('vim-denops/denops.vim')
+  " Install UIs
+  call dein#add('Shougo/ddc-ui-native')
+
+  " Install sources
+  call dein#add('Shougo/ddc-source-around')
+
+  " Install filters
+  call dein#add('Shougo/ddc-matcher_head')
+  call dein#add('Shougo/ddc-sorter_rank')
+
+  call ddc#custom#patch_global('sources', ['around'])
+  call ddc#custom#patch_global('sourceOptions', {
+        \ '_': {
+        \   'matchers': ['matcher_head'],
+        \   'sorters': ['sorter_rank']},
+        \ })
+  call ddc#enable()
+
+  " pum
+  call dein#add('Shougo/pum.vim')
+
   " <<< myplugin
 
   call dein#end()
@@ -67,8 +91,6 @@ if has('nvim')
   " 例: 組み込みのターミナルエミュレータの設定
   " ...
 endif
-
-" <<< myplugin
 
 if dein#check_install()
   call dein#install()
