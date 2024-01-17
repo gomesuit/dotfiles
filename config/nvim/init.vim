@@ -1,74 +1,57 @@
-if &compatible
-  set nocompatible
+" vim-plugのインストールチェックとセットアップ
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-let s:dein_dir = expand('~/.cache/dein')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+" vim-plugプラグインマネージャーを開始
+call plug#begin('~/.local/share/nvim/plugged')
 
-if &runtimepath !~# '/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
-    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-  endif
-  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
-endif
+" 追加、削除、変更された行にマーカーを表示する
+Plug 'airblade/vim-gitgutter'
 
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
+" git拡張
+Plug 'tpope/vim-fugitive'
 
-  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+" Vimの画面の一番下にあるステータスラインの表示内容が強化される
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-  " >>> myplugin
+" vimでペーストする際に、自動でpaste modeにする
+Plug 'ConradIrwin/vim-bracketed-paste'
 
-  " 追加、削除、変更された行にマーカーを表示する
-  call dein#add('airblade/vim-gitgutter')
-  set updatetime=250
+" helper for unix
+Plug 'tpope/vim-eunuch'
 
-  " git拡張
-  call dein#add('tpope/vim-fugitive')
+" タブとスペースの自動検知
+Plug 'tpope/vim-sleuth'
 
-  " Vimの画面の一番下にあるステータスラインの表示内容が強化される
-  call dein#add('bling/vim-airline')
-  call dein#add('vim-airline/vim-airline-themes')
+" A collection of language packs for Vim.
+Plug 'sheerun/vim-polyglot'
 
-  " vimでペーストする際に、自動でpaste modeにする
-  call dein#add('ConradIrwin/vim-bracketed-paste')
+" Lint Engine
+Plug 'dense-analysis/ale'
 
-  " helper for unix
-  call dein#add('tpope/vim-eunuch')
+" commentout shortcut, Use gc
+Plug 'tpope/vim-commentary'
 
-  " タブとスペースの自動検知
-  call dein#add('tpope/vim-sleuth')
+" ddc.vim (auto-completion)
+Plug 'Shougo/ddc.vim'
+Plug 'Shougo/pum.vim'
+Plug 'vim-denops/denops.vim'
+Plug 'Shougo/ddc-ui-native'
+Plug 'Shougo/ddc-source-around'
+Plug 'Shougo/ddc-matcher_head'
+Plug 'Shougo/ddc-sorter_rank'
 
-  " A collection of language packs for Vim.
-  call dein#add('sheerun/vim-polyglot')
+" ディレクトリをツリー表示
+Plug 'preservim/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
 
-  " Lint Engine
-  call dein#add('dense-analysis/ale')
+call plug#end()
 
-  " commentout shortcut, Use gc
-  call dein#add('tpope/vim-commentary')
-
-  " <<< myplugin
-
-  call dein#end()
-  call dein#save_state()
-endif
-
-" ddc.vim
-call dein#add('Shougo/ddc.vim')
-call dein#add('Shougo/pum.vim')
-call dein#add('vim-denops/denops.vim')
-
-" Install UIs
-call dein#add('Shougo/ddc-ui-native')
-
-" Install sources
-call dein#add('Shougo/ddc-source-around')
-
-" Install filters
-call dein#add('Shougo/ddc-matcher_head')
-call dein#add('Shougo/ddc-sorter_rank')
-
+" ddc.vimの設定
 call ddc#custom#patch_global('ui', 'native')
 call ddc#custom#patch_global('sources', ['around'])
 call ddc#custom#patch_global('sourceOptions', {
@@ -87,8 +70,6 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 call ddc#enable()
 
 " ディレクトリをツリー表示
-call dein#add('preservim/nerdtree')
-call dein#add('jistr/vim-nerdtree-tabs')
 let NERDTreeShowHidden=1
 let g:nerdtree_tabs_open_on_console_startup=1
 
@@ -98,12 +79,6 @@ if has('nvim')
   " 例: 組み込みのターミナルエミュレータの設定
   " ...
 endif
-
-if dein#check_install()
-  call dein#install()
-endif
-
-call map(dein#check_clean(), "delete(v:val, 'rf')")
 
 filetype plugin indent on
 syntax enable
