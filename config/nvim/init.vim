@@ -54,22 +54,6 @@ if dein#load_state(s:dein_dir)
   call dein#save_state()
 endif
 
-" >>> myplugin
-" 補完
-call dein#add('Shougo/deoplete.nvim')
-let g:deoplete#enable_at_startup = 1
-" Tab補完の設定
-inoremap <expr><tab> pumvisible() ? "\<C-n>" :
-      \ neosnippet#expandable_or_jumpable() ?
-      \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
-
-" terraform
-call dein#add('hashivim/vim-terraform')
-let g:terraform_fmt_on_save = 1
-"" 補完
-let g:deoplete#omni_patterns = {}
-let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
-call deoplete#initialize()
 
 " ディレクトリをツリー表示
 call dein#add('preservim/nerdtree')
