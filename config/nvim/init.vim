@@ -49,7 +49,17 @@ Plug 'Shougo/ddc-sorter_rank'
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 
+" terminal
+Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
+
 call plug#end()
+
+" terminal
+lua << EOF
+require("toggleterm").setup{
+  open_mapping = [[<c-\>]],
+}
+EOF
 
 " ddc.vimの設定
 call ddc#custom#patch_global('ui', 'native')
