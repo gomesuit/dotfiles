@@ -71,6 +71,13 @@ if dein#load_state(s:dein_dir)
         \   'matchers': ['matcher_head'],
         \   'sorters': ['sorter_rank']},
         \ })
+  call ddc#custom#patch_global('sourceParams', {
+        \ 'around': {
+        \   'maxSize': 500,
+        \ }})
+
+  inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
   call ddc#enable()
 
   " <<< myplugin
@@ -142,11 +149,6 @@ nnoremap sQ :<C-u>bd<CR>
 nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
 nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
 
-inoremap <silent><expr> <TAB>
-      \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
-      \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-      \ '<TAB>' : ddc#map#manual_complete()
-" inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
 
 """"""""""""""""""""""""""""""
 " 各種オプションの設定
