@@ -55,9 +55,12 @@ Plug 'akinsho/toggleterm.nvim', {'tag' : '*'}
 call plug#end()
 
 " terminal
+" https://github.com/akinsho/toggleterm.nvim
 lua << EOF
 require("toggleterm").setup{
   open_mapping = [[<c-\>]],
+  direction = "vertical",
+  size = vim.o.columns * 0.4,
 }
 EOF
 
