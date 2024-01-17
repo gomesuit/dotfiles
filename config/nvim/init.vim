@@ -48,44 +48,43 @@ if dein#load_state(s:dein_dir)
   " commentout shortcut, Use gc
   call dein#add('tpope/vim-commentary')
 
-  " ddc.vim
-  call dein#add('Shougo/ddc.vim')
-  call dein#add('Shougo/pum.vim')
-  call dein#add('vim-denops/denops.vim')
-
-  " Install UIs
-  call dein#add('Shougo/ddc-ui-native')
-
-  " Install sources
-  call dein#add('Shougo/ddc-source-around')
-
-  " Install filters
-  call dein#add('Shougo/ddc-matcher_head')
-  call dein#add('Shougo/ddc-sorter_rank')
-
-  call ddc#custom#patch_global('ui', 'native')
-  call ddc#custom#patch_global('sources', ['around'])
-  call ddc#custom#patch_global('sourceOptions', {
-        \ 'around': {'mark': '[Around]'},
-        \ '_': {
-        \   'matchers': ['matcher_head'],
-        \   'sorters': ['sorter_rank']},
-        \ })
-  call ddc#custom#patch_global('sourceParams', {
-        \ 'around': {
-        \   'maxSize': 500,
-        \ }})
-
-  inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-  call ddc#enable()
-
   " <<< myplugin
 
   call dein#end()
   call dein#save_state()
 endif
 
+" ddc.vim
+call dein#add('Shougo/ddc.vim')
+call dein#add('Shougo/pum.vim')
+call dein#add('vim-denops/denops.vim')
+
+" Install UIs
+call dein#add('Shougo/ddc-ui-native')
+
+" Install sources
+call dein#add('Shougo/ddc-source-around')
+
+" Install filters
+call dein#add('Shougo/ddc-matcher_head')
+call dein#add('Shougo/ddc-sorter_rank')
+
+call ddc#custom#patch_global('ui', 'native')
+call ddc#custom#patch_global('sources', ['around'])
+call ddc#custom#patch_global('sourceOptions', {
+      \ 'around': {'mark': '[Around]'},
+      \ '_': {
+      \   'matchers': ['matcher_head'],
+      \   'sorters': ['sorter_rank']},
+      \ })
+call ddc#custom#patch_global('sourceParams', {
+      \ 'around': {
+      \   'maxSize': 500,
+      \ }})
+
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+call ddc#enable()
 
 " ディレクトリをツリー表示
 call dein#add('preservim/nerdtree')
