@@ -19,9 +19,6 @@ vim.call('plug#', 'tpope/vim-fugitive')
 vim.call('plug#', 'bling/vim-airline')
 vim.call('plug#', 'vim-airline/vim-airline-themes')
 
--- vimでペーストする際に、自動でpaste modeにする
-vim.call('plug#', 'ConradIrwin/vim-bracketed-paste')
-
 -- helper for unix
 vim.call('plug#', 'tpope/vim-eunuch')
 
