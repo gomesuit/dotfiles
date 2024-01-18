@@ -55,6 +55,9 @@ vim.call('plug#', 'nvim-lua/plenary.nvim')
 vim.call('plug#', 'nvim-telescope/telescope.nvim', {['tag'] = '0.1.5'})
 vim.call('plug#', 'nvim-treesitter/nvim-treesitter')
 
+-- vim-terraform
+vim.call('plug#', 'hashivim/vim-terraform')
+
 vim.call('plug#end')
 
 -- toggletermの設定
@@ -107,11 +110,9 @@ require('telescope').setup{
   },
 }
 
-
--- Neovim専用の設定
-if vim.fn.has('nvim') == 1 then
-  -- ここにNeovim固有の設定を追加
-end
+-- vim-terraform
+vim.g.terraform_align = 1
+vim.g.terraform_fmt_on_save = 1
 
 -- 基本的なオプション設定
 vim.o.swapfile = false
