@@ -50,6 +50,10 @@ vim.call('plug#', 'jistr/vim-nerdtree-tabs')
 -- terminal
 vim.call('plug#', 'akinsho/toggleterm.nvim', {['tag'] = '*'})
 
+-- telescope
+vim.call('plug#', 'nvim-lua/plenary.nvim')
+vim.call('plug#', 'nvim-telescope/telescope.nvim', {['tag'] = '0.1.5'})
+
 vim.call('plug#end')
 
 -- toggletermの設定
@@ -83,6 +87,25 @@ vim.fn['ddc#enable']()
 -- NERDTreeの設定
 vim.g.NERDTreeShowHidden = 1
 vim.g.nerdtree_tabs_open_on_console_startup = 1
+
+-- telescopeの設定
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+vim.keymap.set('n', '<leader>r', builtin.live_grep, {})
+
+require('telescope').setup{
+  defaults = {
+    sorting_strategy = "ascending", -- 検索結果を上から下に並べる
+    winblend = 4, --若干ウィンドウを透明に
+    layout_strategy = 'vertical',
+    layout_config = { height = 0.9 },
+    file_ignore_patterns = { --検索対象に含めないファイルを指定
+      "^.git/",
+      "^node_modules/",
+    },
+  },
+}
+
 
 -- Neovim専用の設定
 if vim.fn.has('nvim') == 1 then
