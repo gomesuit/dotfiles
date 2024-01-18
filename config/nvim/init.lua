@@ -53,6 +53,7 @@ vim.call('plug#', 'akinsho/toggleterm.nvim', {['tag'] = '*'})
 -- telescope
 vim.call('plug#', 'nvim-lua/plenary.nvim')
 vim.call('plug#', 'nvim-telescope/telescope.nvim', {['tag'] = '0.1.5'})
+vim.call('plug#', 'nvim-treesitter/nvim-treesitter')
 
 vim.call('plug#end')
 
@@ -96,7 +97,7 @@ vim.keymap.set('n', '<leader>r', builtin.live_grep, {})
 require('telescope').setup{
   defaults = {
     sorting_strategy = "ascending", -- 検索結果を上から下に並べる
-    winblend = 4, --若干ウィンドウを透明に
+    winblend = 0,
     layout_strategy = 'vertical',
     layout_config = { height = 0.9 },
     file_ignore_patterns = { --検索対象に含めないファイルを指定
