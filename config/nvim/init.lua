@@ -58,6 +58,8 @@ vim.call('plug#', 'nvim-treesitter/nvim-treesitter')
 -- vim-terraform
 vim.call('plug#', 'hashivim/vim-terraform')
 
+-- vim.call('plug#', 'neoclide/coc.nvim', {['branch'] = 'release'})
+
 vim.call('plug#end')
 
 -- toggletermの設定
