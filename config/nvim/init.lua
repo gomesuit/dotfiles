@@ -1,3 +1,6 @@
+-- set Leader key
+vim.g.mapleader = ' '
+
 -- vim-plugのインストールチェックとセットアップ
 local plug_path = vim.fn.stdpath('data')..'/site/autoload/plug.vim'
 if vim.fn.empty(vim.fn.glob(plug_path)) > 0 then
