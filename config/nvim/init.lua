@@ -51,6 +51,9 @@ vim.call('plug#', 'Shougo/ddc-sorter_rank')
 vim.call('plug#', 'preservim/nerdtree')
 vim.call('plug#', 'jistr/vim-nerdtree-tabs')
 
+vim.call('plug#', 'nvim-tree/nvim-web-devicons')
+vim.call('plug#', 'nvim-tree/nvim-tree.lua')
+
 -- terminal
 vim.call('plug#', 'akinsho/toggleterm.nvim', {['tag'] = '*'})
 
@@ -97,6 +100,33 @@ vim.fn['ddc#enable']()
 -- NERDTreeの設定
 vim.g.NERDTreeShowHidden = 1
 vim.g.nerdtree_tabs_open_on_console_startup = 1
+
+-- nvim-treeの設定
+-- disable netrw at the very start of your init.lua
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
+-- vim.api.nvim_set_var('loaded_netrw', 1)
+-- vim.api.nvim_set_var('loaded_netrwPlugin', 1)
+-- vim.cmd [[autocmd VimEnter * NvimTreeOpen]]
+
+-- optionally enable 24-bit colour
+-- vim.opt.termguicolors = true
+
+-- empty setup using defaults
+require("nvim-tree").setup({
+  sort = {
+    sorter = "case_sensitive",
+  },
+  view = {
+    width = 30,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
 
 -- telescopeの設定
 local builtin = require('telescope.builtin')
