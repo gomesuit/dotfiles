@@ -100,6 +100,7 @@ vim.g.nerdtree_tabs_open_on_console_startup = 1
 -- telescopeの設定
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+-- require https://github.com/BurntSushi/ripgrep
 vim.keymap.set('n', '<leader>r', builtin.live_grep, {})
 
 require('telescope').setup{
