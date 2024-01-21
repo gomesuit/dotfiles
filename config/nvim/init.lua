@@ -38,6 +38,7 @@ vim.call('plug#', 'dense-analysis/ale')
 vim.call('plug#', 'tpope/vim-commentary')
 
 -- ddc.vim (auto-completion)
+-- require deno (https://deno.com/)
 vim.call('plug#', 'Shougo/ddc.vim')
 vim.call('plug#', 'Shougo/pum.vim')
 vim.call('plug#', 'vim-denops/denops.vim')
