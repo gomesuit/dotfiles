@@ -51,6 +51,7 @@ vim.call('plug#', 'Shougo/ddc-sorter_rank')
 vim.call('plug#', 'preservim/nerdtree')
 vim.call('plug#', 'jistr/vim-nerdtree-tabs')
 
+-- require https://github.com/ryanoasis/nerd-fonts/
 vim.call('plug#', 'nvim-tree/nvim-web-devicons')
 vim.call('plug#', 'nvim-tree/nvim-tree.lua')
 
@@ -98,16 +99,16 @@ vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"'
 vim.fn['ddc#enable']()
 
 -- NERDTreeの設定
-vim.g.NERDTreeShowHidden = 1
-vim.g.nerdtree_tabs_open_on_console_startup = 1
+-- vim.g.NERDTreeShowHidden = 1
+-- vim.g.nerdtree_tabs_open_on_console_startup = 1
 
 -- nvim-treeの設定
 -- disable netrw at the very start of your init.lua
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
--- vim.api.nvim_set_var('loaded_netrw', 1)
--- vim.api.nvim_set_var('loaded_netrwPlugin', 1)
--- vim.cmd [[autocmd VimEnter * NvimTreeOpen]]
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+vim.api.nvim_set_var('loaded_netrw', 1)
+vim.api.nvim_set_var('loaded_netrwPlugin', 1)
+vim.cmd [[autocmd VimEnter * NvimTreeOpen]]
 
 -- optionally enable 24-bit colour
 -- vim.opt.termguicolors = true
