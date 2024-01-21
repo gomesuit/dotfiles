@@ -110,9 +110,6 @@ vim.api.nvim_set_var('loaded_netrw', 1)
 vim.api.nvim_set_var('loaded_netrwPlugin', 1)
 vim.cmd [[autocmd VimEnter * NvimTreeOpen]]
 
--- optionally enable 24-bit colour
--- vim.opt.termguicolors = true
-
 -- empty setup using defaults
 require("nvim-tree").setup({
   sort = {
