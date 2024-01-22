@@ -121,9 +121,9 @@ require("nvim-tree").setup({
   renderer = {
     group_empty = true,
   },
-  filters = {
-    dotfiles = true,
-  },
+  -- filters = {
+  --   dotfiles = true,
+  -- },
   actions = {
     open_file = {
       window_picker = {
