@@ -132,6 +132,11 @@ require("nvim-tree").setup({
       }
     }
   },
+  on_attach = function(bufnr)
+    local api = require "nvim-tree.api"
+    api.config.mappings.default_on_attach(bufnr)
+    vim.api.nvim_buf_del_keymap(bufnr, 'n', 's')
+  end,
 })
 
 -- telescopeの設定
