@@ -134,8 +134,11 @@ require("nvim-tree").setup({
   },
   on_attach = function(bufnr)
     local api = require "nvim-tree.api"
+    -- default mappings
     api.config.mappings.default_on_attach(bufnr)
-    vim.api.nvim_buf_del_keymap(bufnr, 'n', 's')
+
+    -- custom mappings
+    vim.api.nvim_buf_del_keymap(bufnr, 'n', 's') -- sを無効化する
   end,
 })
 
