@@ -131,7 +131,7 @@ require("nvim-tree").setup({
         enable = false,
       }
     }
-  }
+  },
 })
 
 -- telescopeの設定
