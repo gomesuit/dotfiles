@@ -44,7 +44,7 @@ vim.call('plug#', 'Shougo/ddc-converter_remove_overlap')
 -- [ddc] vim-lsp
 vim.call('plug#', 'prabirshrestha/vim-lsp')
 vim.call('plug#', 'shun/ddc-source-vim-lsp')
-vim.call('plug#', 'mattn/vim-lsp-settings')
+vim.call('plug#', 'mattn/vim-lsp-settings') -- :LspInstallServer. :LspManageServers
 
 -- require https://github.com/ryanoasis/nerd-fonts/
 vim.call('plug#', 'nvim-tree/nvim-web-devicons')
