@@ -1,4 +1,3 @@
-print("Loading plugin_settings_nvim_tree.lua")
 -- nvim-treeの設定
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
