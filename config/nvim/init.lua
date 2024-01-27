@@ -158,6 +158,13 @@ require('telescope').setup{
       "^.git/",
       "^node_modules/",
     },
+    mappings = {
+      i = {
+        -- https://github.com/nvim-telescope/telescope.nvim/blob/master/lua/telescope/mappings.lua
+        ["<C-j>"] = "move_selection_next",
+        ["<C-k>"] = "move_selection_previous",
+      }
+    }
   },
 }
 
