@@ -64,3 +64,5 @@ vim.call('plug#', 'hashivim/vim-terraform')
 -- vim.call('plug#', 'neoclide/coc.nvim', {['branch'] = 'release'})
 
 vim.call('plug#end')
+
+require('plugin_settings')
