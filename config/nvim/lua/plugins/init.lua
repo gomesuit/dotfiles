@@ -65,4 +65,4 @@ vim.call('plug#', 'hashivim/vim-terraform')
 
 vim.call('plug#end')
 
-require('plugins/plugin_settings/init')
+require('plugins/settings/init')

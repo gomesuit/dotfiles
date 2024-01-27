@@ -1,0 +1,5 @@
+require('plugins/settings/plugin_settings_toggleterm')
+require('plugins/settings/plugin_settings_ddc')
+require('plugins/settings/plugin_settings_nvim_tree')
+require('plugins/settings/plugin_settings_telescope')
+require('plugins/settings/plugin_settings_vim_terraform')
