@@ -31,10 +31,6 @@ vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {e
 vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', {expr = true})
 vim.fn['ddc#enable']()
 
--- NERDTreeの設定
--- vim.g.NERDTreeShowHidden = 1
--- vim.g.nerdtree_tabs_open_on_console_startup = 1
-
 -- nvim-treeの設定
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1

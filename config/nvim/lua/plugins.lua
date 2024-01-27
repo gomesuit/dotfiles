@@ -44,10 +44,6 @@ vim.call('plug#', 'Shougo/ddc-source-around')
 vim.call('plug#', 'Shougo/ddc-matcher_head')
 vim.call('plug#', 'Shougo/ddc-sorter_rank')
 
--- ディレクトリをツリー表示
-vim.call('plug#', 'preservim/nerdtree')
-vim.call('plug#', 'jistr/vim-nerdtree-tabs')
-
 -- require https://github.com/ryanoasis/nerd-fonts/
 vim.call('plug#', 'nvim-tree/nvim-web-devicons')
 vim.call('plug#', 'nvim-tree/nvim-tree.lua')
