@@ -1,8 +1,10 @@
 -- telescopeの設定
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+-- vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+vim.keymap.set('n', '<C-p>', builtin.find_files, {})
 -- require https://github.com/BurntSushi/ripgrep
-vim.keymap.set('n', '<leader>r', builtin.live_grep, {})
+-- vim.keymap.set('n', '<leader>r', builtin.live_grep, {})
+vim.keymap.set('n', '<C-f>', builtin.live_grep, {})
 
 require('telescope').setup{
   defaults = {
