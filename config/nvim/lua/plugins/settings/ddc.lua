@@ -1,13 +1,16 @@
 -- https://github.com/Shougo/ddc.vim
 
 vim.fn['ddc#custom#patch_global']('ui', 'native')
-vim.fn['ddc#custom#patch_global']('sources', {'around'})
+vim.fn['ddc#custom#patch_global']('sources', {'around', 'file'})
 
 vim.fn['ddc#custom#patch_global']('sourceOptions', {
       ['around'] = {['mark'] = '[Around]'},
       ['_'] = {
-        ['matchers'] = {'matcher_head'},
-        ['sorters'] = {'sorter_rank'},
+        -- ['matchers'] = {'matcher_head'},
+        ['matchers'] = {'matcher_fuzzy'},
+        -- ['sorters'] = {'sorter_rank'},
+        ['sorters'] = {'sorter_fuzzy'},
+        ['converters'] = {'converter_fuzzy'},
       },
 })
 

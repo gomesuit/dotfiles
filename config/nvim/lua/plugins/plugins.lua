@@ -32,9 +32,13 @@ vim.call('plug#', 'Shougo/ddc.vim')
 vim.call('plug#', 'Shougo/pum.vim')
 vim.call('plug#', 'vim-denops/denops.vim')
 vim.call('plug#', 'Shougo/ddc-ui-native')
+
+-- [ddc] around, matchers, sorters, converters
 vim.call('plug#', 'Shougo/ddc-source-around')
 vim.call('plug#', 'Shougo/ddc-matcher_head')
 vim.call('plug#', 'Shougo/ddc-sorter_rank')
+vim.call('plug#', 'tani/ddc-fuzzy')
+vim.call('plug#', 'LumaKernel/ddc-file')
 
 -- require https://github.com/ryanoasis/nerd-fonts/
 vim.call('plug#', 'nvim-tree/nvim-web-devicons')
