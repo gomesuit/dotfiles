@@ -47,3 +47,20 @@ vim.o.whichwrap = 'b,s,h,l,<,>,[,]'
 -- 行番号の色
 vim.api.nvim_command('highlight LineNr ctermfg=darkyellow')
 vim.o.backspace = 'indent,eol,start'
+
+
+-- 行末の空白文字をハイライトする設定
+vim.api.nvim_create_augroup('HighlightTrailingSpaces', {})
+vim.api.nvim_create_autocmd({'VimEnter', 'WinEnter', 'ColorScheme'}, {
+  group = 'HighlightTrailingSpaces',
+  pattern = '*',
+  command = 'highlight TrailingSpaces term=underline guibg=Red ctermbg=Red',
+})
+vim.api.nvim_create_autocmd({'VimEnter', 'WinEnter'}, {
+  group = 'HighlightTrailingSpaces',
+  pattern = '*',
+  command = 'match TrailingSpaces /\\s\\+$/',
+})
+
+-- クリップボードとの連携
+vim.o.clipboard = 'unnamed'
