@@ -1,9 +1,12 @@
--- nvim-treeの設定
+-- https://github.com/nvim-tree/nvim-tree.lua
+
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 vim.api.nvim_set_var('loaded_netrw', 1)
 vim.api.nvim_set_var('loaded_netrwPlugin', 1)
+
+-- 起動時にNvimTreeを開く
 vim.cmd [[autocmd VimEnter * NvimTreeOpen]]
 
 -- empty setup using defaults

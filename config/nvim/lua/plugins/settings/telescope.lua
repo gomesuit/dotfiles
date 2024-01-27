@@ -1,4 +1,5 @@
--- telescopeの設定
+-- https://github.com/nvim-telescope/telescope.nvim
+
 local builtin = require('telescope.builtin')
 -- vim.keymap.set('n', '<leader>f', builtin.find_files, {})
 vim.keymap.set('n', '<C-p>', builtin.find_files, {})
