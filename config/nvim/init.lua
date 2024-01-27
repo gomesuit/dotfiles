@@ -1,6 +1,6 @@
 -- set Leader key
 vim.g.mapleader = ' '
 
-require('plugins/plugins')
+require('plugins/init')
 require('options')
 require('keymaps')
