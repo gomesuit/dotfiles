@@ -26,7 +26,7 @@ require('telescope').setup{
     }
   },
   extensions = {
-    fzf = {
+    fzf = { -- あいまい検索を有効にする
       fuzzy = true,                    -- false will only do exact matching
       override_generic_sorter = true,  -- override the generic sorter
       override_file_sorter = true,     -- override the file sorter
