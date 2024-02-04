@@ -20,18 +20,21 @@
 
 return {
   "Shougo/ddc.vim",
-  "Shougo/pum.vim",
   "vim-denops/denops.vim",
-  "Shougo/ddc-ui-native",
-  "Shougo/ddc-source-around",
-  "Shougo/ddc-matcher_head",
-  "Shougo/ddc-sorter_rank",
-  "tani/ddc-fuzzy",
-  "LumaKernel/ddc-file",
-  "Shougo/ddc-converter_remove_overlap",
-  "prabirshrestha/vim-lsp",
-  "shun/ddc-source-vim-lsp",
-  "mattn/vim-lsp-settings",
+
+  dependencies = {
+    "Shougo/pum.vim",
+    "Shougo/ddc-ui-native",
+    "Shougo/ddc-source-around",
+    "Shougo/ddc-matcher_head",
+    "Shougo/ddc-sorter_rank",
+    "tani/ddc-fuzzy",
+    "LumaKernel/ddc-file",
+    "Shougo/ddc-converter_remove_overlap",
+    "prabirshrestha/vim-lsp",
+    "shun/ddc-source-vim-lsp",
+    "mattn/vim-lsp-settings",
+  },
 
   config = function()
     vim.fn['ddc#custom#patch_global']('ui', 'native')

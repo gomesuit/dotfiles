@@ -6,3 +6,5 @@ require('options')
 require('keymaps')
 
 -- require("config.lazy")
+-- require('config.options')
+-- require('config.keymaps')
