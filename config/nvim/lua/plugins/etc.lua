@@ -5,9 +5,9 @@ return {
   },
 
   -- git拡張
-  {
-    "tpope/vim-fugitive",
-  },
+  -- {
+  --   "tpope/vim-fugitive",
+  -- },
 
   -- Vimの画面の一番下にあるステータスラインの表示内容が強化される
   {
@@ -31,9 +31,9 @@ return {
   -- },
 
   -- Lint Engine
-  {
-    "dense-analysis/ale",
-  },
+  -- {
+  --   "dense-analysis/ale",
+  -- },
 
   -- commentout shortcut, Use gc
   {
