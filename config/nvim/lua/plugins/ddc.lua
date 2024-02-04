@@ -1,63 +1,96 @@
 return {
-  -- require deno (https://deno.com/)
-  "Shougo/ddc.vim",
+  {
+    -- require deno (https://deno.com/)
+    "Shougo/ddc.vim",
 
-  lazy = false,
+    lazy = false,
 
-  dependencies = {
-    "vim-denops/denops.vim",
-    "Shougo/pum.vim",
-    "Shougo/ddc-ui-native",
+    dependencies = {
+      "vim-denops/denops.vim",
+      "Shougo/ddc-ui-native",
 
-    -- [ddc] around, matchers, sorters, converters
-    "Shougo/ddc-source-around",
-    "Shougo/ddc-matcher_head",
-    "Shougo/ddc-sorter_rank",
-    "tani/ddc-fuzzy",
-    "LumaKernel/ddc-file",
-    "Shougo/ddc-converter_remove_overlap",
+      -- [ddc] around, matchers, sorters, converters
+      "Shougo/ddc-source-around",
+      "Shougo/ddc-matcher_head",
+      "Shougo/ddc-sorter_rank",
+      "tani/ddc-fuzzy",
+      "LumaKernel/ddc-file",
+      "Shougo/ddc-converter_remove_overlap",
 
-    -- [ddc] vim-lsp
-    "prabirshrestha/vim-lsp",
-    "shun/ddc-source-vim-lsp",
-    "mattn/vim-lsp-settings",
+      -- [ddc] vim-lsp
+      "prabirshrestha/vim-lsp",
+      "shun/ddc-source-vim-lsp",
+      "mattn/vim-lsp-settings",
+    },
+
+    config = function()
+      local patch_global = vim.fn["ddc#custom#patch_global"]
+
+      patch_global('ui', 'native')
+      patch_global('sources', {
+          'around',
+          'file',
+          'vim-lsp',
+        })
+
+      patch_global('sourceOptions', {
+          ['_'] = {
+            -- ['matchers'] = {'matcher_head'},
+            ['matchers'] = {'matcher_fuzzy'},
+            -- ['sorters'] = {'sorter_rank'},
+            ['sorters'] = {'sorter_fuzzy'},
+            ['converters'] = {'converter_fuzzy'},
+          },
+          ['around'] = {
+            ['mark'] = '[Around]',
+          },
+          ['vim-lsp'] = {
+            ['matchers'] = {'matcher_fuzzy'},
+            ['mark'] = '[LSP]',
+          },
+        })
+
+      patch_global('sourceParams', {
+          ['around'] = {
+            ['maxSize'] = 500,
+          },
+        })
+
+      -- tabキーで補完候補を選択できるようにする
+      vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
+      vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', {expr = true})
+
+      vim.fn['ddc#enable']()
+    end,
   },
+  {
+    "Shougo/pum.vim",
+    config = function()
+      vim.fn["pum#set_option"]({
+          auto_select = true,
+          padding = true,
+          border = "single",
+          preview = true,
+          preview_border = "single",
+          preview_delay = 250,
+          preview_width = 72,
+          scrollbar_char = "▋",
+          highlight_normal_menu = "Normal",
+        })
 
-  config = function()
-    vim.fn['ddc#custom#patch_global']('ui', 'native')
-    vim.fn['ddc#custom#patch_global']('sources', {
-        'around',
-        'file',
-        'vim-lsp',
-      })
+      -- Insert
+      vim.keymap.set("i", "<C-n>", "<cmd>call pum#map#select_relative(+1)<CR>", { silent = true, noremap = true })
+      vim.keymap.set("i", "<C-p>", "<cmd>call pum#map#select_relative(-1)<CR>", { silent = true, noremap = true })
+      vim.keymap.set("i", "<C-y>", "<cmd>call pum#map#confirm()<CR>", { silent = true, noremap = true })
+      vim.keymap.set("i", "<C-e>", "<cmd>call pum#map#cancel()<CR>", { silent = true, noremap = true })
 
-    vim.fn['ddc#custom#patch_global']('sourceOptions', {
-        ['_'] = {
-          -- ['matchers'] = {'matcher_head'},
-          ['matchers'] = {'matcher_fuzzy'},
-          -- ['sorters'] = {'sorter_rank'},
-          ['sorters'] = {'sorter_fuzzy'},
-          ['converters'] = {'converter_fuzzy'},
-        },
-        ['around'] = {
-          ['mark'] = '[Around]',
-        },
-        ['vim-lsp'] = {
-          ['matchers'] = {'matcher_fuzzy'},
-          ['mark'] = '[LSP]',
-        },
-      })
-
-    vim.fn['ddc#custom#patch_global']('sourceParams', {
-        ['around'] = {
-          ['maxSize'] = 500,
-        },
-      })
-
-    -- tabキーで補完候補を選択できるようにする
-    vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
-    vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', {expr = true})
-
-    vim.fn['ddc#enable']()
-  end
+      -- -- Commandline
+      vim.keymap.set("c", "<Tab>", "<Cmd>call pum#map#select_relative(+1)<CR>", { noremap = true })
+      vim.keymap.set("c", "<S-Tab>", "<Cmd>call pum#map#select_relative(-1)<CR>", { noremap = true })
+      vim.keymap.set("c", "<C-n>", "<cmd>call pum#map#select_relative(+1)<CR>", { noremap = true })
+      vim.keymap.set("c", "<C-p>", "<cmd>call pum#map#select_relative(-1)<CR>", { noremap = true })
+      vim.keymap.set("c", "<C-y>", "<cmd>call pum#map#confirm()<CR>", { noremap = true })
+      vim.keymap.set("c", "<C-e>", "<cmd>call pum#map#cancel()<CR>", { noremap = true })
+    end,
+  },
 }
