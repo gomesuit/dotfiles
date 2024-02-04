@@ -1,36 +1,21 @@
--- ddc.vim (auto-completion)
--- require deno (https://deno.com/)
--- vim.call('plug#', 'Shougo/ddc.vim')
--- vim.call('plug#', 'Shougo/pum.vim')
--- vim.call('plug#', 'vim-denops/denops.vim')
--- vim.call('plug#', 'Shougo/ddc-ui-native')
-
--- [ddc] around, matchers, sorters, converters
--- vim.call('plug#', 'Shougo/ddc-source-around')
--- vim.call('plug#', 'Shougo/ddc-matcher_head')
--- vim.call('plug#', 'Shougo/ddc-sorter_rank')
--- vim.call('plug#', 'tani/ddc-fuzzy')
--- vim.call('plug#', 'LumaKernel/ddc-file')
--- vim.call('plug#', 'Shougo/ddc-converter_remove_overlap')
-
--- [ddc] vim-lsp
--- vim.call('plug#', 'prabirshrestha/vim-lsp')
--- vim.call('plug#', 'shun/ddc-source-vim-lsp')
--- vim.call('plug#', 'mattn/vim-lsp-settings') -- :LspInstallServer. :LspManageServers
-
 return {
+  -- require deno (https://deno.com/)
   "Shougo/ddc.vim",
   "vim-denops/denops.vim",
 
   dependencies = {
     "Shougo/pum.vim",
     "Shougo/ddc-ui-native",
+
+    -- [ddc] around, matchers, sorters, converters
     "Shougo/ddc-source-around",
     "Shougo/ddc-matcher_head",
     "Shougo/ddc-sorter_rank",
     "tani/ddc-fuzzy",
     "LumaKernel/ddc-file",
     "Shougo/ddc-converter_remove_overlap",
+
+    -- [ddc] vim-lsp
     "prabirshrestha/vim-lsp",
     "shun/ddc-source-vim-lsp",
     "mattn/vim-lsp-settings",
