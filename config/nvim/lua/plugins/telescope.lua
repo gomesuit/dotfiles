@@ -1,22 +1,19 @@
--- telescope
--- vim.call('plug#', 'nvim-lua/plenary.nvim')
--- vim.call('plug#', 'nvim-telescope/telescope.nvim', {['tag'] = '0.1.5'})
--- vim.call('plug#', 'nvim-treesitter/nvim-treesitter')
--- vim.call('plug#', 'nvim-telescope/telescope-fzf-native.nvim', {['do'] = 'make'})
-
 return {
-  "nvim-lua/plenary.nvim",
   "nvim-telescope/telescope.nvim",
-  "nvim-treesitter/nvim-treesitter",
-  "nvim-telescope/telescope-fzf-native.nvim",
-  config = function()
-    local builtin = require('telescope.builtin')
-    -- vim.keymap.set('n', '<leader>f', builtin.find_files, {})
-    vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-    -- require https://github.com/BurntSushi/ripgrep
-    -- vim.keymap.set('n', '<leader>r', builtin.live_grep, {})
-    vim.keymap.set('n', '<C-f>', builtin.live_grep, {})
 
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-treesitter/nvim-treesitter",
+    "nvim-telescope/telescope-fzf-native.nvim",
+  },
+
+  keys = {
+    {"<C-p>", mode={"n"}, "<cmd>Telescope find_files<cr>", desc = "Find Files"},
+    -- require https://github.com/BurntSushi/ripgrep
+    {"<C-f>", mode={"n"}, "<cmd>Telescope live_grep<cr>", desc = "Live Grep"},
+  },
+
+  config = function()
     require('telescope').setup{
       defaults = {
         sorting_strategy = "ascending", -- 検索結果を上から下に並べる
