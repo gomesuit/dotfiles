@@ -26,9 +26,9 @@ return {
   },
 
   -- A collection of language packs for Vim.
-  {
-    "sheerun/vim-polyglot",
-  },
+  -- {
+  --   "sheerun/vim-polyglot",
+  -- },
 
   -- Lint Engine
   {
