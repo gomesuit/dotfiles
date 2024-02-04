@@ -1,9 +1,11 @@
 return {
   -- require deno (https://deno.com/)
   "Shougo/ddc.vim",
-  "vim-denops/denops.vim",
+
+  lazy = false,
 
   dependencies = {
+    "vim-denops/denops.vim",
     "Shougo/pum.vim",
     "Shougo/ddc-ui-native",
 
