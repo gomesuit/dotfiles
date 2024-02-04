@@ -18,7 +18,7 @@ vim.call('plug#', 'tpope/vim-eunuch')
 vim.call('plug#', 'tpope/vim-sleuth')
 
 -- A collection of language packs for Vim.
-vim.call('plug#', 'sheerun/vim-polyglot')
+-- vim.call('plug#', 'sheerun/vim-polyglot')
 
 -- Lint Engine
 -- vim.call('plug#', 'dense-analysis/ale')
@@ -69,5 +69,8 @@ vim.call('plug#', 'hashivim/vim-terraform')
 -- status line
 vim.call('plug#', 'nvim-lualine/lualine.nvim')
 -- vim.call('plug#', 'nvim-tree/nvim-web-devicons')
+
+-- highlighting
+vim.call('plug#', 'nvim-treesitter/nvim-treesitter')
 
 vim.call('plug#end')
