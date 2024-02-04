@@ -21,7 +21,7 @@ vim.call('plug#', 'tpope/vim-sleuth')
 vim.call('plug#', 'sheerun/vim-polyglot')
 
 -- Lint Engine
-vim.call('plug#', 'dense-analysis/ale')
+-- vim.call('plug#', 'dense-analysis/ale')
 
 -- commentout shortcut, Use gc
 vim.call('plug#', 'tpope/vim-commentary')
