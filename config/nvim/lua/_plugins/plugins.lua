@@ -66,7 +66,7 @@ vim.call('plug#', 'hashivim/vim-terraform')
 -- vim.call('plug#', 'neoclide/coc.nvim', {['branch'] = 'release'})
 
 
--- https://github.com/nvim-lualine/lualine.nvim
+-- status line
 vim.call('plug#', 'nvim-lualine/lualine.nvim')
 -- vim.call('plug#', 'nvim-tree/nvim-web-devicons')
 
