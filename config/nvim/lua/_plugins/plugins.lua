@@ -7,21 +7,11 @@ vim.call('plug#', 'airblade/vim-gitgutter')
 -- git拡張
 vim.call('plug#', 'tpope/vim-fugitive')
 
--- Vimの画面の一番下にあるステータスラインの表示内容が強化される
--- vim.call('plug#', 'bling/vim-airline')
--- vim.call('plug#', 'vim-airline/vim-airline-themes')
-
 -- helper for unix
 vim.call('plug#', 'tpope/vim-eunuch')
 
 -- タブとスペースの自動検知
 vim.call('plug#', 'tpope/vim-sleuth')
-
--- A collection of language packs for Vim.
--- vim.call('plug#', 'sheerun/vim-polyglot')
-
--- Lint Engine
--- vim.call('plug#', 'dense-analysis/ale')
 
 -- commentout shortcut, Use gc
 vim.call('plug#', 'tpope/vim-commentary')
