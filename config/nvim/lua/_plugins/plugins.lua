@@ -8,8 +8,8 @@ vim.call('plug#', 'airblade/vim-gitgutter')
 vim.call('plug#', 'tpope/vim-fugitive')
 
 -- Vimの画面の一番下にあるステータスラインの表示内容が強化される
-vim.call('plug#', 'bling/vim-airline')
-vim.call('plug#', 'vim-airline/vim-airline-themes')
+-- vim.call('plug#', 'bling/vim-airline')
+-- vim.call('plug#', 'vim-airline/vim-airline-themes')
 
 -- helper for unix
 vim.call('plug#', 'tpope/vim-eunuch')
@@ -64,5 +64,10 @@ vim.call('plug#', 'nvim-telescope/telescope-fzf-native.nvim', {['do'] = 'make'})
 vim.call('plug#', 'hashivim/vim-terraform')
 
 -- vim.call('plug#', 'neoclide/coc.nvim', {['branch'] = 'release'})
+
+
+-- https://github.com/nvim-lualine/lualine.nvim
+vim.call('plug#', 'nvim-lualine/lualine.nvim')
+-- vim.call('plug#', 'nvim-tree/nvim-web-devicons')
 
 vim.call('plug#end')
