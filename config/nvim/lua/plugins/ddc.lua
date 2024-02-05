@@ -44,6 +44,9 @@ return {
           ['around'] = {
             ['mark'] = '[Around]',
           },
+          ['file'] = {
+            ['mark'] = '[File]',
+          },
           ['vim-lsp'] = {
             ['matchers'] = {'matcher_fuzzy'},
             ['mark'] = '[LSP]',
