@@ -1,6 +1,6 @@
 {
   "bufferline.nvim": { "branch": "main", "commit": "b15c6daf5a64426c69732b31a951f4e438cb6590" },
-  "copilot.lua": { "branch": "master", "commit": "03f825956ec49e550d07875d867ea6e7c4dc8c00" },
+  "copilot.vim": { "branch": "release", "commit": "22fd9542e3c47552abab5e685fefd760e4f405b2" },
   "ddc-converter_remove_overlap": { "branch": "main", "commit": "e94330b06c47f63a46ce705927bb4deaff611c21" },
   "ddc-file": { "branch": "main", "commit": "72335138349133361e38fe7a0d320a3ff1788839" },
   "ddc-fuzzy": { "branch": "main", "commit": "ee205bba8011a941380412a34e47ca67bb5fa41f" },
