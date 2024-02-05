@@ -1,8 +1,8 @@
 return {
   -- 追加、削除、変更された行にマーカーを表示する
-  {
-    "airblade/vim-gitgutter",
-  },
+  -- {
+  --   "airblade/vim-gitgutter",
+  -- },
 
   -- git拡張
   -- {
