@@ -16,9 +16,9 @@ return {
   },
 
   -- helper for unix
-  {
-    "tpope/vim-eunuch",
-  },
+  -- {
+  --   "tpope/vim-eunuch",
+  -- },
 
   -- タブとスペースの自動検知
   {
