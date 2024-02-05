@@ -136,6 +136,7 @@ return {
     end,
   },
 
+  -- indentにラインを表示する
   {
     "lukas-reineke/indent-blankline.nvim",
     opts = {
@@ -198,7 +199,7 @@ return {
 
   {
     "echasnovski/mini.animate",
-    enabled = false,
+    enabled = true,
     event = "VeryLazy",
     opts = function()
       -- don't use animate when scrolling with the mouse
