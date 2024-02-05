@@ -3,9 +3,4 @@ return {
   {
     "tpope/vim-commentary",
   },
-
-  -- タブとスペースの自動検知
-  {
-    "tpope/vim-sleuth",
-  },
 }
