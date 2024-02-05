@@ -10,10 +10,10 @@ return {
   -- },
 
   -- Vimの画面の一番下にあるステータスラインの表示内容が強化される
-  {
-    "bling/vim-airline",
-    "vim-airline/vim-airline-themes",
-  },
+  -- {
+  --   "bling/vim-airline",
+  --   "vim-airline/vim-airline-themes",
+  -- },
 
   -- helper for unix
   -- {
