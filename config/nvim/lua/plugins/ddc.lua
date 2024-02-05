@@ -9,7 +9,7 @@ return {
       "vim-denops/denops.vim",
       "Shougo/ddc-ui-native",
 
-      -- [ddc] around, matchers, sorters, converters
+      -- around, matchers, sorters, converters
       "Shougo/ddc-source-around",
       "Shougo/ddc-matcher_head",
       "Shougo/ddc-sorter_rank",
@@ -17,10 +17,13 @@ return {
       "LumaKernel/ddc-file",
       "Shougo/ddc-converter_remove_overlap",
 
-      -- [ddc] vim-lsp
+      -- vim-lsp
       "prabirshrestha/vim-lsp",
       "shun/ddc-source-vim-lsp",
       "mattn/vim-lsp-settings",
+
+      -- snippet
+      "Shougo/deoppet.nvim",
     },
 
     config = function()
@@ -31,6 +34,7 @@ return {
           'around',
           'file',
           'vim-lsp',
+          'deoppet',
         })
 
       patch_global('sourceOptions', {
@@ -50,6 +54,11 @@ return {
           ['vim-lsp'] = {
             ['matchers'] = {'matcher_fuzzy'},
             ['mark'] = '[LSP]',
+          },
+          ['deoppet'] = {
+            ['dup'] = true,
+            -- ['matchers'] = {'matcher_fuzzy'},
+            ['mark'] = '[Snippet]',
           },
         })
 
