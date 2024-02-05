@@ -50,6 +50,7 @@ return {
     },
   },
 
+  -- バッファのタブ表示
   {
     "echasnovski/mini.bufremove",
 
@@ -77,8 +78,13 @@ return {
     },
   },
 
+  -- バッファのタブ表示
   {
     "akinsho/bufferline.nvim",
+
+    dependencies = {
+      "echasnovski/mini.bufremove",
+    },
     event = "VeryLazy",
     keys = {
       { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle pin" },
