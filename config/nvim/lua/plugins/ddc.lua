@@ -85,12 +85,12 @@ return {
       vim.keymap.set("i", "<C-e>", "<cmd>call pum#map#cancel()<CR>", { silent = true, noremap = true })
 
       -- -- Commandline
-      vim.keymap.set("c", "<Tab>", "<Cmd>call pum#map#select_relative(+1)<CR>", { noremap = true })
-      vim.keymap.set("c", "<S-Tab>", "<Cmd>call pum#map#select_relative(-1)<CR>", { noremap = true })
-      vim.keymap.set("c", "<C-n>", "<cmd>call pum#map#select_relative(+1)<CR>", { noremap = true })
-      vim.keymap.set("c", "<C-p>", "<cmd>call pum#map#select_relative(-1)<CR>", { noremap = true })
-      vim.keymap.set("c", "<C-y>", "<cmd>call pum#map#confirm()<CR>", { noremap = true })
-      vim.keymap.set("c", "<C-e>", "<cmd>call pum#map#cancel()<CR>", { noremap = true })
+      -- vim.keymap.set("c", "<Tab>", "<Cmd>call pum#map#select_relative(+1)<CR>", { noremap = true })
+      -- vim.keymap.set("c", "<S-Tab>", "<Cmd>call pum#map#select_relative(-1)<CR>", { noremap = true })
+      -- vim.keymap.set("c", "<C-n>", "<cmd>call pum#map#select_relative(+1)<CR>", { noremap = true })
+      -- vim.keymap.set("c", "<C-p>", "<cmd>call pum#map#select_relative(-1)<CR>", { noremap = true })
+      -- vim.keymap.set("c", "<C-y>", "<cmd>call pum#map#confirm()<CR>", { noremap = true })
+      -- vim.keymap.set("c", "<C-e>", "<cmd>call pum#map#cancel()<CR>", { noremap = true })
     end,
   },
 }
