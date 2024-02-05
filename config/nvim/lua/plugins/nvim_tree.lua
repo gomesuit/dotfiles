@@ -14,9 +14,6 @@ return  {
     vim.api.nvim_set_var('loaded_netrw', 1)
     vim.api.nvim_set_var('loaded_netrwPlugin', 1)
 
-    -- 起動時にNvimTreeを開く
-    vim.cmd [[autocmd VimEnter * NvimTreeOpen]]
-
     require("nvim-tree").setup({
         sort = {
           sorter = "case_sensitive",
@@ -47,5 +44,9 @@ return  {
           vim.api.nvim_buf_del_keymap(bufnr, 'n', 's') -- sを無効化する
         end,
       })
+
+      -- 起動時にNvimTreeを開く
+      vim.cmd [[autocmd VimEnter * NvimTreeOpen]]
+      -- require("nvim-tree.api").tree.open()
   end,
 }
