@@ -12,7 +12,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = {
-      { import = "plugins" },
-    },
-  })
+  spec = {
+    { import = "plugins" },
+  },
+  checker = {
+    notify = true,  -- get a notification when new updates are found
+    frequency = 3600, -- check for updates every hour
+  }
+})
