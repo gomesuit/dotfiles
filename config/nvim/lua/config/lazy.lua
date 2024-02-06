@@ -16,6 +16,7 @@ require("lazy").setup({
     { import = "plugins" },
   },
   checker = {
+    enable = true,
     notify = true,  -- get a notification when new updates are found
     frequency = 3600, -- check for updates every hour
   }
