@@ -11,6 +11,7 @@ return {
 
       -- around, matchers, sorters, converters
       "Shougo/ddc-source-around",
+      "matsui54/ddc-source-buffer",
       "Shougo/ddc-matcher_head",
       "Shougo/ddc-sorter_rank",
       "tani/ddc-fuzzy",
@@ -32,36 +33,46 @@ return {
 
       patch_global('ui', 'native')
       patch_global('sources', {
-          'around',
-          'file',
-          'vim-lsp',
-        })
+        'around',
+        'file',
+        'vim-lsp',
+        'buffer',
+      })
 
       patch_global('sourceOptions', {
-          ['_'] = {
-            -- ['matchers'] = {'matcher_head'},
-            ['matchers'] = {'matcher_fuzzy'},
-            -- ['sorters'] = {'sorter_rank'},
-            ['sorters'] = {'sorter_fuzzy'},
-            ['converters'] = {'converter_fuzzy'},
-          },
-          ['around'] = {
-            ['mark'] = '[Around]',
-          },
-          ['file'] = {
-            ['mark'] = '[File]',
-          },
-          ['vim-lsp'] = {
-            ['matchers'] = {'matcher_fuzzy'},
-            ['mark'] = '[LSP]',
-          },
-        })
+        ['_'] = {
+          -- ['matchers'] = {'matcher_head'},
+          ['matchers'] = {'matcher_fuzzy'},
+          -- ['sorters'] = {'sorter_rank'},
+          ['sorters'] = {'sorter_fuzzy'},
+          ['converters'] = {'converter_fuzzy'},
+        },
+        ['around'] = {
+          ['mark'] = '[Around]',
+        },
+        ['buffer'] = {
+          ['mark'] = '[Buffer]',
+        },
+        ['file'] = {
+          ['mark'] = '[File]',
+        },
+        ['vim-lsp'] = {
+          ['matchers'] = {'matcher_fuzzy'},
+          ['mark'] = '[LSP]',
+        },
+      })
 
       patch_global('sourceParams', {
-          ['around'] = {
-            ['maxSize'] = 500,
-          },
-        })
+        ['around'] = {
+          ['maxSize'] = 500,
+        },
+        ['buffer'] = {
+          ['requireSameFiletype'] = false,
+          ['limitBytes'] = 5000000,
+          ['fromAltBuf'] = true,
+          ['forceCollect'] = true,
+        },
+      })
 
       -- tabキーで補完候補を選択できるようにする
       vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
