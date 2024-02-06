@@ -1,2 +1,2 @@
 EXCLUDES="README*.md LICENSE"
-SYMLINK_DIRS="config/nvim config/wezterm peco"
+SYMLINK_DIRS="config/nvim config/wezterm config/starship.toml peco"
