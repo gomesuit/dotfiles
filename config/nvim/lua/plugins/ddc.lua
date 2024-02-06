@@ -23,7 +23,8 @@ return {
       "mattn/vim-lsp-settings",
 
       -- snippet
-      "Shougo/deoppet.nvim",
+      "hrsh7th/vim-vsnip",
+      "hrsh7th/vim-vsnip-integ",
     },
 
     config = function()
@@ -34,7 +35,6 @@ return {
           'around',
           'file',
           'vim-lsp',
-          'deoppet',
         })
 
       patch_global('sourceOptions', {
@@ -54,11 +54,6 @@ return {
           ['vim-lsp'] = {
             ['matchers'] = {'matcher_fuzzy'},
             ['mark'] = '[LSP]',
-          },
-          ['deoppet'] = {
-            ['dup'] = true,
-            -- ['matchers'] = {'matcher_fuzzy'},
-            ['mark'] = '[Snippet]',
           },
         })
 
