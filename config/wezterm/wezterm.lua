@@ -25,7 +25,7 @@ local keybind = require 'keybinds'
 config.keys = keybind.keys
 config.key_tables = keybind.key_tables
 -- Leaderキーの設定
-config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 }
+config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 2000 }
 
 -- and finally, return the configuration to wezterm
 return config
