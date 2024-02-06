@@ -13,6 +13,7 @@ config.color_scheme = 'Tokyo Night Storm'
 config.window_background_opacity = 0.95
 
 -- font
+config.font = wezterm.font 'Hack Nerd Font'
 config.font_size = 13.0
 
 -- keybinds
