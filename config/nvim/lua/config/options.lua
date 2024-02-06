@@ -19,7 +19,7 @@ vim.o.smartcase = true
 -- 検索結果をハイライト表示する
 vim.o.hlsearch = true
 -- 暗い背景色に合わせた配色にする
-vim.o.background = 'dark'
+-- vim.o.background = 'dark'
 -- タブ入力を複数の空白入力に置き換える
 vim.o.expandtab = true
 -- 検索ワードの最初の文字を入力した時点で検索を開始する
