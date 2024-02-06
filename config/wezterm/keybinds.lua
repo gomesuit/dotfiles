@@ -99,7 +99,7 @@ return {
     { key = '_', mods = 'SHIFT|CTRL', action = act.DecreaseFontSize },
     { key = 'c', mods = 'SHIFT|CTRL', action = act.CopyTo 'Clipboard' },
     { key = 'c', mods = 'SUPER', action = act.CopyTo 'Clipboard' },
-    { key = 'f', mods = 'SHIFT|CTRL', action = act.Search 'CurrentSelectionOrEmptyString' },
+    -- { key = 'f', mods = 'SHIFT|CTRL', action = act.Search 'CurrentSelectionOrEmptyString' },
     { key = 'f', mods = 'SUPER', action = act.Search 'CurrentSelectionOrEmptyString' },
     { key = 'h', mods = 'SHIFT|CTRL', action = act.HideApplication },
     { key = 'h', mods = 'SUPER', action = act.HideApplication },
