@@ -85,16 +85,16 @@ return {
     "Shougo/pum.vim",
     config = function()
       vim.fn["pum#set_option"]({
-          auto_select = true,
-          padding = true,
-          border = "single",
-          preview = true,
-          preview_border = "single",
-          preview_delay = 250,
-          preview_width = 72,
-          scrollbar_char = "▋",
-          highlight_normal_menu = "Normal",
-        })
+        auto_select = true,
+        padding = true,
+        border = "single",
+        preview = true,
+        preview_border = "single",
+        preview_delay = 250,
+        preview_width = 72,
+        scrollbar_char = "▋",
+        highlight_normal_menu = "Normal",
+      })
 
       -- Insert
       vim.keymap.set("i", "<C-n>", "<cmd>call pum#map#select_relative(+1)<CR>", { silent = true, noremap = true })
