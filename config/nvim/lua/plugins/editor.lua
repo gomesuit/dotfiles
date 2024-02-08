@@ -77,9 +77,12 @@ return {
 
       null_ls.setup({
         sources = {
+          -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
+
           -- formatting
           null_ls.builtins.formatting.stylua,
           null_ls.builtins.formatting.terraform_fmt,
+          null_ls.builtins.formatting.rubyfmt,
 
           -- diagnostics
           null_ls.builtins.diagnostics.eslint,
