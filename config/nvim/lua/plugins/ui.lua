@@ -302,4 +302,12 @@ return {
       require("colorizer").setup()
     end,
   },
+
+  {
+    "t9md/vim-quickhl",
+
+    keys = {
+      { "<leader>m", "<Plug>(quickhl-manual-this)" },
+    },
+  },
 }

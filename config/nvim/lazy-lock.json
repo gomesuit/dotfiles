@@ -39,6 +39,7 @@
   "vim-commentary": { "branch": "master", "commit": "f67e3e67ea516755005e6cccb178bc8439c6d402" },
   "vim-lsp": { "branch": "master", "commit": "c20c6650d32a85e09ae6c7a9747aef7ded3677fb" },
   "vim-lsp-settings": { "branch": "master", "commit": "ab60c7d73f249a582a68ef0553bbcf0de8b41696" },
+  "vim-quickhl": { "branch": "master", "commit": "be1f44169c3fdee3beab629e83380515da03835e" },
   "vim-terraform": { "branch": "master", "commit": "3d1cfc8e183f1a58f71587442849510462f5857b" },
   "vim-vsnip": { "branch": "master", "commit": "02a8e79295c9733434aab4e0e2b8c4b7cea9f3a9" },
   "vim-vsnip-integ": { "branch": "master", "commit": "1914e72cf3de70df7f5dde476cd299aba2440aef" }
