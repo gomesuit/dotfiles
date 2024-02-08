@@ -15,8 +15,13 @@ return {
     },
 
     opts = {
-      -- configuration goes here
       arg = "leetcode.nvim",
+
+      lang = "python",
+
+      storage = {
+        home = "~/dev/github.com/gomesuit/leetcode/codes",
+      },
     },
   }
 }
