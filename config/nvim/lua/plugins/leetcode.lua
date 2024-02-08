@@ -16,6 +16,7 @@ return {
 
     opts = {
       -- configuration goes here
+      arg = "leetcode.nvim",
     },
   }
 }
