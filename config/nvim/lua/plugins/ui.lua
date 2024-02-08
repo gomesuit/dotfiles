@@ -321,4 +321,19 @@ return {
       { "<leader>m", "<Plug>(quickhl-manual-this)" },
     },
   },
+
+  {
+    "haya14busa/vim-asterisk",
+
+    keys = {
+      { "*", "<Plug>(asterisk-z*)" },
+      { "#", "<Plug>(asterisk-z#)" },
+      { "g*", "<Plug>(asterisk-gz*)" },
+      { "g#", "<Plug>(asterisk-gz#)" },
+    },
+
+    config = function()
+      vim.g["asterisk#keeppos"] = 1
+    end,
+  },
 }

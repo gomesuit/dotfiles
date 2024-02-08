@@ -37,6 +37,7 @@
   "toggleterm.nvim": { "branch": "main", "commit": "b49df5cdce67a8964d1b027dae94bde212092b51" },
   "tokyonight.nvim": { "branch": "main", "commit": "610179f7f12db3d08540b6cc61434db2eaecbcff" },
   "trouble.nvim": { "branch": "main", "commit": "f1168feada93c0154ede4d1fe9183bf69bac54ea" },
+  "vim-asterisk": { "branch": "master", "commit": "77e97061d6691637a034258cc415d98670698459" },
   "vim-commentary": { "branch": "master", "commit": "f67e3e67ea516755005e6cccb178bc8439c6d402" },
   "vim-lsp": { "branch": "master", "commit": "c20c6650d32a85e09ae6c7a9747aef7ded3677fb" },
   "vim-lsp-settings": { "branch": "master", "commit": "ab60c7d73f249a582a68ef0553bbcf0de8b41696" },
