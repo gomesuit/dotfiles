@@ -3,6 +3,10 @@ return {
     "kawre/leetcode.nvim",
     build = ":TSUpdate html",
 
+    keys = {
+      {"<C-f>", mode={"n"}, "<cmd>Telescope live_grep<cr>", desc = "Live Grep"},
+    },
+
     dependencies = {
       "nvim-telescope/telescope.nvim",
       "nvim-lua/plenary.nvim", -- required by telescope
