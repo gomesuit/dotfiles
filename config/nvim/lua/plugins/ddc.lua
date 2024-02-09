@@ -59,7 +59,7 @@ return {
           ['mark'] = '[File]',
         },
         ['vim-lsp'] = {
-          ['matchers'] = {'matcher_fuzzy'},
+          ['matchers'] = {'matcher_head'},
           ['mark'] = '[LSP]',
         },
       })
