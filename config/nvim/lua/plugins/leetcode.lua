@@ -23,7 +23,8 @@ return {
     opts = {
       arg = "leetcode.nvim",
 
-      lang = "python3",
+      -- lang = "python3",
+      lang = "ruby",
 
       storage = {
         home = "~/dev/github.com/gomesuit/leetcode/codes",
