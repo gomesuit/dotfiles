@@ -3,7 +3,7 @@ return {
     -- require deno (https://deno.com/)
     "Shougo/ddc.vim",
 
-    enabled = true,
+    enabled = false,
 
     lazy = false,
 

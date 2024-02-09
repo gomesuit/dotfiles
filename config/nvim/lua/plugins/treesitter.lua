@@ -1,10 +1,13 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
+
     event = "BufRead",
+
     config = function()
       require("nvim-treesitter.configs").setup({
         autotag = { enable = true },
+
         highlight = {
           enable = true,
           -- disable = function(_, buf)
@@ -15,7 +18,9 @@ return {
           --   end
           -- end,
         },
+
         indent = { enable = true },
+
         ensure_installed = {
           "astro",
           "bash",
@@ -49,6 +54,7 @@ return {
           "vim",
           "yaml",
           "git_config",
+          "terraform",
         },
       })
     end,
