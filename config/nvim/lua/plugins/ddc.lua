@@ -35,9 +35,9 @@ return {
 
       patch_global('ui', 'native')
       patch_global('sources', {
+        'vim-lsp',
         'around',
         'file',
-        'vim-lsp',
         'buffer',
       })
 
