@@ -3,6 +3,8 @@ return {
     "kawre/leetcode.nvim",
     build = ":TSUpdate html",
 
+    lazy = false,
+
     keys = {
       {"<C-f>", mode={"n"}, "<cmd>Telescope live_grep<cr>", desc = "Live Grep"},
     },
@@ -21,7 +23,7 @@ return {
     opts = {
       arg = "leetcode.nvim",
 
-      lang = "python",
+      lang = "python3",
 
       storage = {
         home = "~/dev/github.com/gomesuit/leetcode/codes",
