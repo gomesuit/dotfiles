@@ -6,7 +6,7 @@ return {
     lazy = false,
 
     keys = {
-      {"<C-f>", mode={"n"}, "<cmd>Telescope live_grep<cr>", desc = "Live Grep"},
+      -- {"<C-f>", mode={"n"}, "<cmd>Telescope live_grep<cr>", desc = "Live Grep"},
     },
 
     dependencies = {

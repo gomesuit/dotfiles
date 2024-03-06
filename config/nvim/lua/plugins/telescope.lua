@@ -11,7 +11,8 @@ return {
     keys = {
       {"<C-p>", mode={"n"}, "<cmd>Telescope find_files<cr>", desc = "Find Files"},
       -- require https://github.com/BurntSushi/ripgrep
-      {"<C-f>", mode={"n"}, "<cmd>Telescope live_grep<cr>", desc = "Live Grep"},
+      -- {"<C-f>", mode={"n"}, "<cmd>Telescope live_grep<cr>", desc = "Live Grep"},
+      {"<C-q>", mode={"n"}, "<cmd>Telescope live_grep<cr>", desc = "Live Grep"},
     },
 
     config = function()
