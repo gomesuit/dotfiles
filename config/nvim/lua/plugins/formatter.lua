@@ -19,6 +19,7 @@ return {
           null_ls.builtins.formatting.stylua,
           null_ls.builtins.formatting.terraform_fmt,
           null_ls.builtins.formatting.rubyfmt,
+          null_ls.builtins.formatting.goimports_reviser,
 
           -- diagnostics
           null_ls.builtins.diagnostics.eslint,
