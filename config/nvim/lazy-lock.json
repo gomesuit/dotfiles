@@ -1,5 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "0236521ea582747b58869cb72f70ccfa967d2e89" },
+  "CopilotChat.nvim": { "branch": "canary", "commit": "4b2e631dfd7e08507dd083a18480fe71a7bf8717" },
   "bufferline.nvim": { "branch": "main", "commit": "64e2c5def50dfd6b6f14d96a45fa3d815a4a1eef" },
   "copilot.vim": { "branch": "release", "commit": "037f594103af5f0e585254278e654ba42cebda07" },
   "ddc-converter_remove_overlap": { "branch": "main", "commit": "e94330b06c47f63a46ce705927bb4deaff611c21" },
