@@ -13,7 +13,7 @@ vim.o.title = true
 vim.o.wildmenu = true
 -- 入力中のコマンドを表示する
 vim.o.showcmd = true
-vim.o.browsedir = 'buffer'
+-- vim.o.browsedir = 'buffer'
 -- 小文字のみで検索したときに大文字小文字を無視する
 vim.o.smartcase = true
 -- 検索結果をハイライト表示する
