@@ -24,6 +24,14 @@ rcdn .vimrc
 lsrc -d $PWD # dry-run
 ```
 
+# etc
+
+```bash
+$ brew install starship font-hack-nerd-font
+$ brew install neovim
+$ brew install ripgrep
+```
+
 # References
 
 - https://github.com/thoughtbot/dotfiles
