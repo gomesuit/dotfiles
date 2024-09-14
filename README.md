@@ -30,6 +30,7 @@ lsrc -d $PWD # dry-run
 $ brew install starship font-hack-nerd-font
 $ brew install neovim
 $ brew install ripgrep
+$ brew install fd
 ```
 
 # References
